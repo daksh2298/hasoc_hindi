@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Annotations - Hindi</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="{{ url_for('static',filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+        type="text/css">
+  <link href="{{ url_for('static',filename='vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet"
+        type="text/css">
+  <link href="{{ url_for('static',filename='css/css/sb-admin.css') }}" rel="stylesheet" type="text/css">
+
+  {#  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">#}
+  {#  <link rel="stylesheet" href="{{ url_for('static',filename='css/jQuery-plugin-progressbar.css') }}">#}
+  <script type="text/JavaScript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="{{ url_for('static',filename='js/jQuery-plugin-progressbar.js') }}"></script>
+  {#  <script src="jQuery-plugin-progressbar.js"></script>#}
+  <!-- Page level plugin CSS-->
+  {#  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">#}
+  {##}
+  {#  <!-- Custom styles for this template-->#}
+  {#  <link href="css/sb-admin.css" rel="stylesheet">#}
+  <style>
+    .progress-bar {
+      position: relative;
+      height: 100px;
+      width: 100px;
+    }
+
+    .progress-bar div {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+    }
+
+    .progress-bar div span {
+      position: absolute;
+      font-family: Arial;
+      font-size: 25px;
+      line-height: 75px;
+      height: 75px;
+      width: 75px;
+      left: 12.5px;
+      top: 12.5px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .progress-bar .background {
+      background-color: white;
+    }
+
+    .progress-bar .rotate {
+      clip: rect(0 50px 100px 0);
+      background-color: white;
+    }
+
+    .progress-bar .left {
+      clip: rect(0 50px 100px 0);
+      opacity: 1;
+      background-color: white;
+    }
+
+    .progress-bar .right {
+      clip: rect(0 50px 100px 0);
+      transform: rotate(180deg);
+      opacity: 0;
+      background-color: white;
+    }
+
+    @keyframes toggle {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .selected {
+      background-color: #ECF0F1;
+    }
+  </style>
+  <script>
+      var value = 0;
+
+      function check_reload() {
+          window.value += 1;
+          if (window.value === 40) {
+              alert('!!!!!!! Fetching more tweets from the server !!!!!!!!');
+              location.reload();
+              window.value = 0
+          }
+
+      }
+  </script>
+</head>
+
+<body id="page-top">
+
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+  <a class="navbar-brand mr-1" href="/home">HASOC</a>
+
+  <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Navbar Search -->
+  <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" action="/logout">
+    {#    <div style="height: 20px; width: 20px;">#}
+    {##}
+    {#      <div class="progress-bar" data-percent="60" data-duration="1000" data-color="#ccc,yellow" style="color: black; background-color: transparent"></div>#}
+    {#    </div>#}
+    <button class="btn btn-danger text-white" type="submit">Logout</button>
+  </form>
+</nav>
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <ul class="sidebar navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="{{ url_for('home') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('annotated_tweets') }}">
+        <i class="fas fa-fw fa-check-circle"></i>
+        <span>Annotated Tweets</span>
+      </a>
+    </li>
+  </ul>
+
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <h2>Welcome {{ name }}</h2>
+      </ol>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/home">Dashboard</a>
+        </li>
+      </ol>
+      {#      <script>#}
+      {#          $(".progress-bar").loading();#}
+      {#          $('input').on('click', function () {#}
+      {#              $(".progress-bar").loading();#}
+      {#          });#}
+      {#      </script>#}
+
+
+      <!-- DataTables Example -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fas fa-table"></i>
+          Annotation Table
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-responsive" id="dataTable">
+              <thead class="thead-dark">
+              <tr>
+                <th>id</th>
+                <th>Tweet</th>
+                {#                        <th>Predicted-Judgement</th>#}
+                <th>Actual Judgement</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for row in rows %}
+                <tr id="row_{{ row[2] }}">
+                  <td width="5%">
+                    {{ row[0] + 1 }}
+                  </td>
+                  <td width="50%" style="position: relative">{{ row[1] }}
+                    <small style="position: absolute;right: 0;bottom: 0; color: gray">
+                      <form method="POST" id="form_incomplete_{{ row[2] }}">
+                        <input type="hidden" value="{{ row[1] }}" name="tweet">
+                        <input type="hidden" value="{{ row[2] }}" name="id_str">
+                        Incomplete tweet? Report
+                        <button class="btn btn-link"
+                                style="font-size: 12px; padding-bottom: 2px; padding-left: 0; padding-right: 0; padding-top: 0; font-weight: bold;"
+                                id="report_incomplete_{{ row[2] }}" type="button">
+                          Here
+                        </button>
+                      </form>
+                    </small>
+                    <small style="position: absolute;left: 0;bottom: 0; color: gray">
+                      <form method="POST" id="form_not_english_{{ row[2] }}">
+                        <input type="hidden" value="{{ row[1] }}" name="tweet">
+                        <input type="hidden" value="{{ row[2] }}" name="id_str">
+                        Not a english tweet? Report
+                        <button class="btn btn-link"
+                                style="font-size: 12px; padding-bottom: 2px; padding-left: 0; padding-right: 0; padding-top: 0; font-weight: bold;"
+                                id="report_not_english_{{ row[2] }}" type="button">
+                          Here
+                        </button>
+                      </form>
+                      <script type="text/javascript">
+                          $(function () {
+                              $('#report_not_english_{{ row[2] }}').click(function () {
+                                  data = $('#form_not_english_{{ row[2] }}').serialize();
+                                  data_array = $('#form_not_english_{{ row[2] }}').serializeArray();
+                                  $.ajax({
+                                      url: '/report_not_english',
+                                      data: $('#form_not_english_{{ row[2] }}').serialize(),
+                                      type: 'POST',
+                                      success: function (response) {
+                                          console.log('response', response);
+                                          button = $('#button_{{ row[2] }}');
+                                          button.attr('disabled', 'disabled');
+                                          tr = $('#row_{{ row[2] }}');
+                                          tr.addClass('selected');
+                                          tr.addClass('text-muted');
+                                          task_table = $('#task_table_{{ row[2] }}');
+                                          task_table.addClass('text-muted');
+                                          not_r = $("#not_{{ row[2] }}");
+                                          hof_r = $("#hof_{{ row[2] }}");
+                                          $(not_r).attr('disabled', 'disabled');
+                                          $(hof_r).attr('disabled', 'disabled');
+                                          hate = document.getElementById('hate_{{ row[2] }}');
+                                          offn = document.getElementById('offn_{{ row[2] }}');
+                                          prfn = document.getElementById('prfn_{{ row[2] }}');
+                                          $(hate).attr('disabled', 'disabled');
+                                          $(offn).attr('disabled', 'disabled');
+                                          $(prfn).attr('disabled', 'disabled');
+                                          unt = $("#unt_{{ row[2] }}");
+                                          tin = $("#tin_{{ row[2] }}");
+                                          $(unt).attr('disabled', 'disabled');
+                                          $(tin).attr('disabled', 'disabled');
+                                          report_inc = $("#report_incomplete_{{ row[2] }}");
+                                          report_inc.attr('disabled', 'disabled');
+                                          report_not = $("#report_not_english_{{ row[2] }}");
+                                          report_not.attr('disabled', 'disabled');
+                                          {% if (row[0] + 1) % 10 == 0 and (row[0]) != 0 %}
+                                              table.page('next').draw('page');
+                                          {% endif %}
+                                          {% if row[0] <len(rows) - 1 %}
+                                              var element = document.getElementById("row_{{ rows[row[0]+1][2] }}");
+                                              element.scrollIntoView({behavior: "smooth"});
+                                          {% else %}
+                                              var element = document.getElementById("row_{{ rows[row[0]-1][2] }}");
+                                              element.scrollIntoView({behavior: "smooth"});
+                                          {% endif %}
+                                          {#next_row.scrollIntoView({behavior: "smooth"});#}
+                                          {#console.log(row);#}
+
+                                          check_reload();
+                                      },
+                                      error: function (error) {
+                                          console.log(error);
+                                      }
+                                  });
+                              });
+                          });
+                          $(function () {
+                              $('#report_incomplete_{{ row[2] }}').click(function () {
+                                  data = $('#form_incomplete_{{ row[2] }}').serialize();
+                                  data_array = $('#form_incomplete_{{ row[2] }}').serializeArray();
+                                  $.ajax({
+                                      url: '/report_incomplete',
+                                      data: $('#form_incomplete_{{ row[2] }}').serialize(),
+                                      type: 'POST',
+                                      success: function (response) {
+                                          console.log('response', response);
+                                          button = $('#button_{{ row[2] }}');
+                                          button.attr('disabled', 'disabled');
+                                          tr = $('#row_{{ row[2] }}');
+                                          tr.addClass('selected');
+                                          tr.addClass('text-muted');
+                                          task_table = $('#task_table_{{ row[2] }}');
+                                          task_table.addClass('text-muted');
+                                          not_r = $("#not_{{ row[2] }}");
+                                          hof_r = $("#hof_{{ row[2] }}");
+                                          $(not_r).attr('disabled', 'disabled');
+                                          $(hof_r).attr('disabled', 'disabled');
+                                          hate = document.getElementById('hate_{{ row[2] }}');
+                                          offn = document.getElementById('offn_{{ row[2] }}');
+                                          prfn = document.getElementById('prfn_{{ row[2] }}');
+                                          $(hate).attr('disabled', 'disabled');
+                                          $(offn).attr('disabled', 'disabled');
+                                          $(prfn).attr('disabled', 'disabled');
+                                          unt = $("#unt_{{ row[2] }}");
+                                          tin = $("#tin_{{ row[2] }}");
+                                          $(unt).attr('disabled', 'disabled');
+                                          $(tin).attr('disabled', 'disabled');
+                                          report_inc = $("#report_incomplete_{{ row[2] }}");
+                                          report_inc.attr('disabled', 'disabled');
+                                          report_not = $("#report_not_english_{{ row[2] }}");
+                                          report_not.attr('disabled', 'disabled');
+                                          {% if (row[0] + 1) % 10 == 0 and (row[0]) != 0 %}
+                                              table.page('next').draw('page');
+                                          {% endif %}
+                                          {% if row[0] < len(rows) - 1 %}
+                                              var element = document.getElementById("row_{{ rows[row[0]+1][2] }}");
+                                              element.scrollIntoView({behavior: "smooth"});
+                                          {% else %}
+                                              var element = document.getElementById("row_{{ rows[row[0]-1][2] }}");
+                                              element.scrollIntoView({behavior: "smooth"});
+                                          {% endif %}
+                                          {#next_row.scrollIntoView({behavior: "smooth"});#}
+                                          {#console.log(row);#}
+
+                                          check_reload();
+                                      },
+                                      error: function (error) {
+                                          console.log(error);
+                                      }
+                                  });
+                              });
+                          });
+
+                      </script>
+                    </small>
+                  </td>
+                  <td align="center" width="32%">
+                    <div class="table-responsive table-bordered">
+                      <form id="form_{{ row[2] }}">
+                        <input type="hidden" name="tweet" value="{{ row[1] }}">
+                        <input type="hidden" name="id_str" value="{{ row[2] }}">
+                        <input type="hidden" name="row_no" value="{{ row[0] }}">
+
+                        <table class="table" id="task_table_{{ row[2] }}">
+                          <tr>
+                            <th>
+                              Task 1
+                            </th>
+                            <th>
+                              Task 2
+                            </th>
+                            <th>
+                              Task 3
+                            </th>
+                            <th>
+                              Submit
+                            </th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="radio">
+                                <label><input type="radio" name="task_1" value="NOT" required id="not_{{ row[2] }}">&nbsp;NOT</label>
+                              </div>
+                              <div class="radio">
+                                <label><input type="radio" name="task_1" value="HOF" required id="hof_{{ row[2] }}">&nbsp;HOF</label>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="radio">
+                                <label id="hate_l_{{ row[2] }}"><input type="radio" name="task_2" value="HATE" required
+                                                                       id="hate_{{ row[2] }}">&nbsp;HATE</label>
+                              </div>
+                              <div class="radio">
+                                <label id="offn_l_{{ row[2] }}"><input type="radio" name="task_2" value="OFFN" required
+                                                                       id="offn_{{ row[2] }}">&nbsp;OFFN</label>
+                              </div>
+                              <div class="radio">
+                                <label id="prfn_l_{{ row[2] }}"><input type="radio" name="task_2" value="PRFN" required
+                                                                       id="prfn_{{ row[2] }}">&nbsp;PRFN</label>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="radio">
+                                <label><input type="radio" name="task_3" value="UNT"
+                                              id="unt_{{ row[2] }}">&nbsp;UNT</label>
+                              </div>
+                              <div class="radio">
+                                <label><input type="radio" name="task_3" value="TIN"
+                                              id="tin_{{ row[2] }}">&nbsp;TIN</label>
+                              </div>
+                            </td>
+                            <td rowspan="3">
+                              <button class="btn btn-dark" type="button" id="button_{{ row[2] }}" name="annot">Submit
+                              </button>
+                            </td>
+                            <script>
+                                $(document).ready(function () {
+                                    $("#not_{{ row[2] }}").click(function () {
+                                        hate = document.getElementById('hate_{{ row[2] }}');
+                                        offn = document.getElementById('offn_{{ row[2] }}');
+                                        prfn = document.getElementById('prfn_{{ row[2] }}');
+                                        console.log(hate, offn, prfn);
+                                        $(hate).attr('disabled', 'disabled');
+                                        $('#hate_l_{{ row[2] }}').attr('class', 'text-muted');
+                                        $('#offn_l_{{ row[2] }}').attr('class', 'text-muted');
+                                        $('#prfn_l_{{ row[2] }}').attr('class', 'text-muted');
+                                        $(hate).removeAttr('checked');
+                                        $(offn).attr('disabled', 'disabled');
+                                        $(offn).removeAttr('checked');
+                                        $(prfn).attr('disabled', 'disabled');
+                                        $(prfn).removeAttr('checked');
+                                    });
+                                });
+                                $(document).ready(function () {
+                                    $("#hof_{{ row[2] }}").click(function () {
+                                        hate = document.getElementById('hate_{{ row[2] }}');
+                                        offn = document.getElementById('offn_{{ row[2] }}');
+                                        prfn = document.getElementById('prfn_{{ row[2] }}');
+                                        console.log(hate, offn, prfn);
+                                        $(hate).removeAttr('disabled');
+                                        $('#hate_l_{{ row[2] }}').removeAttr('class');
+                                        $('#offn_l_{{ row[2] }}').removeAttr('class');
+                                        $('#prfn_l_{{ row[2] }}').removeAttr('class');
+                                        $(offn).removeAttr('disabled');
+                                        $(prfn).removeAttr('disabled');
+                                    });
+                                });
+
+                            </script>
+                          </tr>
+                        </table>
+                      </form>
+                      <script type="text/javascript">
+                          $(function () {
+                              $('#button_{{ row[2] }}').click(function () {
+                                  data = $('#form_{{ row[2] }}').serialize();
+                                  data_array = $('#form_{{ row[2] }}').serializeArray();
+                                  console.log($('#form_{{ row[2] }}').serializeArray());
+                                  console.log(data_array.length);
+                                  check = false;
+                                  row = parseInt(data_array[2]['value']) + 1;
+                                  if (data_array.length > 4 && data_array[4]['name'] == 'task_2') {
+                                      if (data_array[4]['value'] === 'HATE' || data_array[4]['value'] === 'OFFN' || data_array[4]['value'] === 'PRFN') {
+                                          check = true;
+                                      } else {
+                                          check = false;
+                                      }
+                                  }
+                                  if (data_array.length > 3) {
+                                      if (data_array[3]['value'] === 'NOT' || data_array[3]['value'] === 'HOF') {
+                                          check = true;
+                                          console.log(data_array[3]);
+                                          if (data_array[3]['value'] === 'HOF' && data_array.length < 5) {
+                                              check = false;
+                                              alert('Please annotate for task 2 and task 3 in row ' + (row));
+                                              {#task_2=data_array[4]['name'];#}
+                                              {#console.log(task_2)#}
+                                          }
+                                          if (data_array[3]['value'] === 'HOF' && data_array.length > 4) {
+                                              if (data_array[4]['name'] != 'task_2') {
+                                                  check = false;
+                                                  alert('Please annotate for  task 2 in row ' + (row));
+                                              }
+                                          }
+                                          if (data_array.length < 5 && data_array[3]['value'] === 'NOT') {
+                                              check = true;
+                                          }
+                                          if (data_array.length < 6 && data_array[3]['value'] == 'HOF') {
+                                              check = false;
+                                              alert('Please annotate for  task 3 in row ' + (row));
+                                          }
+
+                                      } else {
+                                          check = false;
+                                          alert('Please annotate task 1 in row ' + row + ' first');
+                                      }
+                                  } else {
+                                      check = false;
+                                      alert('Please annotate for atleast one task in row ' + row)
+                                  }
+                                  if (check) {
+                                      $.ajax({
+                                          url: '/annot',
+                                          data: $('#form_{{ row[2] }}').serialize(),
+                                          type: 'POST',
+                                          success: function (response) {
+                                              console.log('response', response);
+                                              button = $('#button_{{ row[2] }}');
+                                              button.attr('disabled', 'disabled');
+                                              tr = $('#row_{{ row[2] }}');
+                                              tr.addClass('selected');
+                                              tr.addClass('text-muted');
+                                              task_table = $('#task_table_{{ row[2] }}');
+                                              task_table.addClass('text-muted');
+                                              not_r = $("#not_{{ row[2] }}");
+                                              hof_r = $("#hof_{{ row[2] }}");
+                                              $(not_r).attr('disabled', 'disabled');
+                                              $(hof_r).attr('disabled', 'disabled');
+                                              hate = document.getElementById('hate_{{ row[2] }}');
+                                              offn = document.getElementById('offn_{{ row[2] }}');
+                                              prfn = document.getElementById('prfn_{{ row[2] }}');
+                                              $(hate).attr('disabled', 'disabled');
+                                              $(offn).attr('disabled', 'disabled');
+                                              $(prfn).attr('disabled', 'disabled');
+                                              unt = $("#unt_{{ row[2] }}");
+                                              tin = $("#tin_{{ row[2] }}");
+                                              $(unt).attr('disabled', 'disabled');
+                                              $(tin).attr('disabled', 'disabled');
+                                              report_inc = $("#report_incomplete_{{ row[2] }}");
+                                              report_inc.attr('disabled', 'disabled');
+                                              report_not_english = $("#report_not_english_{{ row[2] }}");
+                                              report_not_english.attr('disabled', 'disabled');
+                                              {% if (row[0] + 1) % 10 == 0 and (row[0]) != 0 %}
+                                                  table.page('next').draw('page');
+                                              {% endif %}
+                                              {% if row[0] < len(rows) - 1 %}
+                                                  var element = document.getElementById("row_{{ rows[row[0]+1][2] }}");
+                                                  element.scrollIntoView({behavior: "smooth"});
+                                              {% else %}
+                                                  var element = document.getElementById("row_{{ rows[row[0]-1][2] }}");
+                                                  element.scrollIntoView({behavior: "smooth"});
+                                              {% endif %}
+                                              {#next_row.scrollIntoView({behavior: "smooth"});#}
+                                              console.log(row);
+
+                                              check_reload();
+                                          },
+                                          error: function (error) {
+                                              console.log(error);
+                                          }
+                                      });
+                                  }
+                                  {#console.log('hello',data);#}
+                              });
+                          });
+
+                      </script>
+                    </div>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+    <!-- Sticky Footer -->
+    <footer class="sticky-footer">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright © HASOC 2019</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+
+<!-- Bootstrap core JavaScript-->
+<script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ url_for('static',filename='js/sb-admin.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/demo/datatables-demo.js') }}"></script>
+{#  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>#}
+
+<!-- Core plugin JavaScript-->
+{#  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>#}
+
+<!-- Page level plugin JavaScript-->
+{#  <script src="vendor/datatables/jquery.dataTables.js"></script>#}
+</body>
+
+</html>

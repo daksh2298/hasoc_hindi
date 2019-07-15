@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Statistics - English/Hindi</title>
+
+  <!-- Custom fonts for this template-->
+{#  <link href="{{ url_for('static',filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"#}
+{#          type="text/css">#}
+{#  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">#}
+{#  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">#}
+{#  <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>#}
+{#  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">#}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+{#  <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/v4-shims.js"></script>#}
+  <link href="{{ url_for('static',filename='vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet"
+        type="text/css">
+  <link href="{{ url_for('static',filename='css/css/sb-admin.css') }}" rel="stylesheet" type="text/css">
+  <script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendor/chart.js/Chart.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/sb-admin.min.js') }}"></script>
+
+</head>
+
+<body id="page-top">
+
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+  <a class="navbar-brand mr-1" href="/home">HASOC</a>
+
+  <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Navbar Search -->
+  <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" action="/logout">
+    <button class="btn btn-danger text-white" type="submit">Logout</button>
+  </form>
+</nav>
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <ul class="sidebar navbar-nav">
+    <li class="nav-item ">
+      <a class="nav-link" href="{{ url_for('home') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('annotated_tweets') }}">
+        <i class="fas fa-fw fa-check-circle"></i>
+        <span>Annotated Tweets</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="{{ url_for('stats') }}">
+        <i class="fas fa-chart-bar"></i>
+        <span>Statistics</span>
+      </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('manage_users') }}">
+          <i class="fas fa-cog"></i>
+          <span>Manage users</span>
+        </a>
+      </li>
+  </ul>
+
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <h2>Welcome {{ session['name'] }}</h2>
+      </ol>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/home">HASOC</a>
+        </li>
+        <li class="breadcrumb-item active">Statistics</li>
+      </ol>
+      <ol class="breadcrumb">
+        <ul>
+          <li>
+            <h5>Total tweets annotated till date:- {{ statistics['total_annots'] }}</h5>
+          </li>
+          <li>
+            <h5>Total tweets having <b>TWO or more</b> annotations till date:- {{ statistics['double_annots'] }}</h5>
+          </li>
+{#          <li>#}
+{#            <h5>Total tweets having <b>SAME</b> annotations till date:- {{ statistics['same_annots'] }}</h5>#}
+{#          </li>#}
+          <li>
+            <h5>Inter Annotator Agreement:- </h5>
+            <ul>
+              <li style="color: #007bff;">Task 1:- {{ aggs[0] }} %</li>
+              <li style="color: #007bff;">Task 2:- {{ aggs[1] }} %</li>
+              <li style="color: #007bff;">Task 3:- {{ aggs[2] }} %</li>
+            </ul>
+          </li>
+        </ul>
+      </ol>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card mb-3 mx-auto">
+            <div class="card-header">Assigned Start end</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-responsive" id="dataTable_info">
+                  <thead class="thead-dark">
+                  <tr>
+                    <th width=25%>
+                      Username
+                    </th>
+                    <th width=25%>
+                      Total Assigned
+                    </th>
+                    <th width=25%>
+                      Total Annotated
+                    </th>
+                    <th width=25%>
+                      Total Left
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for username in data %}
+                    {% if data[username]['active'] %}
+                      <tr>
+                        <td>
+                          {{ username }}
+                        </td>
+                        <td>
+                          {{ data[username]['total_assigned'] }}
+                        </td>
+                        <td>
+                          {{ data[username]['annoted_count'] }}
+                        </td>
+                        <td>
+                          {{ len(data[username]['annoted_tweets']) }}
+                        </td>
+                      </tr>
+                    {% endif %}
+{#                      <tr class="text-muted">#}
+{#                        <td>#}
+{#                          {{ username }}#}
+{#                        </td>#}
+{#                        <td colspan="3">#}
+{#                          <span>No tweets assigned! Hence temporarily deactivated.</span>#}
+{#                        </td>#}
+{#                      </tr>#}
+{#                    {% endif %}#}
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer">
+              <small class="alert-danger"><b>NOTE:-</b>
+                {% for user in data %}
+                  {% if not data[user]['active'] %}
+                    {{ user }},
+                  {% endif %}
+                {% endfor %}
+                are not included in the current distribution as they are inactive users.
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $(document).ready(function () {
+          $('#dataTable_info').DataTable({
+            "order": [[1, "asc"]],
+            "iDisplayLength": 25
+          });
+        });
+      </script>
+    </div>
+    <footer class="sticky-footer">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright © HASOC 2019</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+
+<!-- Bootstrap core JavaScript-->
+<script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+{#<script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>#}
+<script src="{{ url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ url_for('static',filename='js/sb-admin.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/demo/datatables-demo.js') }}"></script>
+{#  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>#}
+
+<!-- Core plugin JavaScript-->
+{#  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>#}
+
+<!-- Page level plugin JavaScript-->
+{#  <script src="vendor/datatables/jquery.dataTables.js"></script>#}
+
+
+</body>
+
+</html>

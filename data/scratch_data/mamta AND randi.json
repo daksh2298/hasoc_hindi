@@ -1,0 +1,1713 @@
+[
+    {
+        "created_at": "Tue Jun 11 07:15:02 +0000 2019",
+        "id": 1138343869123162112,
+        "id_str": "1138343869123162112",
+        "full_text": "@Umashankar_khad @anitaparashar77 Yes..jai bhejo mamta randi ko.....",
+        "truncated": false,
+        "display_text_range": [
+            34,
+            68
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "Umashankar_khad",
+                    "name": "Chowkidar Umashankar Khadria",
+                    "id": 896396378640752640,
+                    "id_str": "896396378640752640",
+                    "indices": [
+                        0,
+                        16
+                    ]
+                },
+                {
+                    "screen_name": "anitaparashar77",
+                    "name": "Anita Parashar#JusticeForTwinkleSharma",
+                    "id": 4002680189,
+                    "id_str": "4002680189",
+                    "indices": [
+                        17,
+                        33
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1138044271829835779,
+        "in_reply_to_status_id_str": "1138044271829835779",
+        "in_reply_to_user_id": 896396378640752640,
+        "in_reply_to_user_id_str": "896396378640752640",
+        "in_reply_to_screen_name": "Umashankar_khad",
+        "user": {
+            "id": 1126039733795090432,
+            "id_str": "1126039733795090432",
+            "name": "Rockey",
+            "screen_name": "Rockey90023741",
+            "location": "",
+            "description": "desh premi.....desh k liye jina aur marna...big fan Rajiv Dixit ji.... ager mokka Mila to desh k gaddar netao ki gand mei goli marunga ....bus koi ek mokka do",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 21,
+            "friends_count": 61,
+            "listed_count": 0,
+            "created_at": "Wed May 08 08:22:48 +0000 2019",
+            "favourites_count": 4418,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 808,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 1,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Sun Jun 09 13:52:25 +0000 2019",
+        "id": 1137719096672260096,
+        "id_str": "1137719096672260096",
+        "full_text": "@ZeeNewsHindi @ZeeNews @SachinArorra Mamta gaand tantr chla rhi hai randi",
+        "truncated": false,
+        "display_text_range": [
+            37,
+            73
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "ZeeNewsHindi",
+                    "name": "Zee News Hindi",
+                    "id": 461841349,
+                    "id_str": "461841349",
+                    "indices": [
+                        0,
+                        13
+                    ]
+                },
+                {
+                    "screen_name": "ZeeNews",
+                    "name": "Zee News",
+                    "id": 18071358,
+                    "id_str": "18071358",
+                    "indices": [
+                        14,
+                        22
+                    ]
+                },
+                {
+                    "screen_name": "SachinArorra",
+                    "name": "Sachin Arora",
+                    "id": 3235754286,
+                    "id_str": "3235754286",
+                    "indices": [
+                        23,
+                        36
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1137674448612413445,
+        "in_reply_to_status_id_str": "1137674448612413445",
+        "in_reply_to_user_id": 461841349,
+        "in_reply_to_user_id_str": "461841349",
+        "in_reply_to_screen_name": "ZeeNewsHindi",
+        "user": {
+            "id": 1054991198874669056,
+            "id_str": "1054991198874669056",
+            "name": "kundan prakash",
+            "screen_name": "kundanp38432874",
+            "location": "Jharkhand, India",
+            "description": "I am Modi fan",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 12,
+            "friends_count": 22,
+            "listed_count": 0,
+            "created_at": "Wed Oct 24 07:01:17 +0000 2018",
+            "favourites_count": 3122,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 196,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1112766781414735872/I71nE9su_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1112766781414735872/I71nE9su_normal.jpg",
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1054991198874669056/1554139248",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 1,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Wed Jun 05 11:54:39 +0000 2019",
+        "id": 1136239911617478656,
+        "id_str": "1136239911617478656",
+        "full_text": "@MamataOfficial Jai shree ram, baghwan kre aap agle sal eid manane ke liye free ho jaye or fir aap roze bhi rakh lena , randi mamta kuttiya",
+        "truncated": false,
+        "display_text_range": [
+            16,
+            139
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        0,
+                        15
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+        "in_reply_to_status_id": 1135918476114051074,
+        "in_reply_to_status_id_str": "1135918476114051074",
+        "in_reply_to_user_id": 2526794479,
+        "in_reply_to_user_id_str": "2526794479",
+        "in_reply_to_screen_name": "MamataOfficial",
+        "user": {
+            "id": 78238076,
+            "id_str": "78238076",
+            "name": "Chowkidar AMIT SHAH \ud83c\uddf3\ud83c\uddea\ud83c\uddf3\ud83c\uddea\ud83c\uddf3\ud83c\uddea",
+            "screen_name": "dalbeer",
+            "location": "Ghandinagar, gujarat",
+            "description": "Inspire from our dear national party president shri amit sha ji and want to do something our party",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 17,
+            "friends_count": 85,
+            "listed_count": 0,
+            "created_at": "Tue Sep 29 06:44:18 +0000 2009",
+            "favourites_count": 936,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 96,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "C0DEED",
+            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1132515750189494272/pyFMIfEA_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1132515750189494272/pyFMIfEA_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": true,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Wed Jun 05 10:36:45 +0000 2019",
+        "id": 1136220307704823809,
+        "id_str": "1136220307704823809",
+        "full_text": "@i_am_karuna @v007ten Unko mulla Muslim nehi mante baloch ko dekhlo\nAur yaha to Randi dutt laurash Kumar Rahul genda arvind chutiywala Mamta bhosdiwala lalu lawda yadav akhlish bhosdika ye log behn ka loda sab Hindu he unko kyu fikar karega",
+        "truncated": false,
+        "display_text_range": [
+            22,
+            240
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "i_am_karuna",
+                    "name": "Karuna tyagi",
+                    "id": 807889437812105220,
+                    "id_str": "807889437812105220",
+                    "indices": [
+                        0,
+                        12
+                    ]
+                },
+                {
+                    "screen_name": "v007ten",
+                    "name": "EVM-Hack \ud83e\udd23 \u00ae - \u0938\u0947\u0915\u0941\u0932\u0930\u093f\u091c\u094d\u092e \u090f\u0915 \u0915\u0948\u0902\u0938\u0930 \u0939\u0948\u0964",
+                    "id": 257871412,
+                    "id_str": "257871412",
+                    "indices": [
+                        13,
+                        21
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1136122252196425729,
+        "in_reply_to_status_id_str": "1136122252196425729",
+        "in_reply_to_user_id": 807889437812105220,
+        "in_reply_to_user_id_str": "807889437812105220",
+        "in_reply_to_screen_name": "i_am_karuna",
+        "user": {
+            "id": 1132098782978383873,
+            "id_str": "1132098782978383873",
+            "name": "LOCK DOWN",
+            "screen_name": "LOCKDOW20900521",
+            "location": "mujhe koi fadak.nehinpadta",
+            "description": "Mein jis bhi akashganga me geya tum sab prajati ek hi nikle tum samjh te ho ki tum brahmand ke kendrovindo ho \nkitni galat soch he",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 4,
+            "friends_count": 93,
+            "listed_count": 0,
+            "created_at": "Sat May 25 01:39:18 +0000 2019",
+            "favourites_count": 48,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 255,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1136492391945293824/TUw3Y2C3_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1136492391945293824/TUw3Y2C3_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Wed Jun 05 05:04:12 +0000 2019",
+        "id": 1136136617595326464,
+        "id_str": "1136136617595326464",
+        "full_text": "TERA TIME AAGYA MAMTA TUJHE PAKISTAN BHEJEGE IMRAN SE CHOODWANE KE LIYE RANDI MAMTA CHOOT WALI RANDI MADARCHOOD MULLO SE CHOODWANE WALI @MamataOfficial",
+        "truncated": false,
+        "display_text_range": [
+            0,
+            151
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        136,
+                        151
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+            "id": 1041997212069187584,
+            "id_str": "1041997212069187584",
+            "name": "chowkidar arvind kumarbjp.in",
+            "screen_name": "InKumarbjp",
+            "location": "Mandhana (Kanpur), India",
+            "description": "i m angry in Indian politician party leaders rahul gandhi harkdk patel kanhaiya kumar  chandra shikher mera ek he makshad en desh ke gadaro goli pila pila ke",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 6,
+            "friends_count": 232,
+            "listed_count": 0,
+            "created_at": "Tue Sep 18 10:27:49 +0000 2018",
+            "favourites_count": 7,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 647,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "000000",
+            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1107299145000206336/tNYJagk2_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1107299145000206336/tNYJagk2_normal.jpg",
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1041997212069187584/1552835632",
+            "profile_link_color": "FAB81E",
+            "profile_sidebar_border_color": "000000",
+            "profile_sidebar_fill_color": "000000",
+            "profile_text_color": "000000",
+            "profile_use_background_image": false,
+            "has_extended_profile": true,
+            "default_profile": false,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Wed Jun 05 05:02:19 +0000 2019",
+        "id": 1136136144813301762,
+        "id_str": "1136136144813301762",
+        "full_text": "RANDI MADARCHOOD BELAT PE HO TAKI TOO MADARCHOOD RANDI BOTH CAPTURE KARSAKE RANDI SALI KUTTIYA MAMTA CHOODAKAR SALI MULLO SE CHOODWANE WALI RANDI @MamataOfficial @BANG",
+        "truncated": false,
+        "display_text_range": [
+            0,
+            167
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        146,
+                        161
+                    ]
+                },
+                {
+                    "screen_name": "Bang",
+                    "name": "100T Bang \ubc30\uc900\uc2dd\ud83c\uddf0\ud83c\uddf7",
+                    "id": 784414435,
+                    "id_str": "784414435",
+                    "indices": [
+                        162,
+                        167
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+            "id": 1041997212069187584,
+            "id_str": "1041997212069187584",
+            "name": "chowkidar arvind kumarbjp.in",
+            "screen_name": "InKumarbjp",
+            "location": "Mandhana (Kanpur), India",
+            "description": "i m angry in Indian politician party leaders rahul gandhi harkdk patel kanhaiya kumar  chandra shikher mera ek he makshad en desh ke gadaro goli pila pila ke",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 6,
+            "friends_count": 232,
+            "listed_count": 0,
+            "created_at": "Tue Sep 18 10:27:49 +0000 2018",
+            "favourites_count": 7,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 647,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "000000",
+            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1107299145000206336/tNYJagk2_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1107299145000206336/tNYJagk2_normal.jpg",
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1041997212069187584/1552835632",
+            "profile_link_color": "FAB81E",
+            "profile_sidebar_border_color": "000000",
+            "profile_sidebar_fill_color": "000000",
+            "profile_text_color": "000000",
+            "profile_use_background_image": false,
+            "has_extended_profile": true,
+            "default_profile": false,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Tue Jun 04 16:29:16 +0000 2019",
+        "id": 1135946632959102976,
+        "id_str": "1135946632959102976",
+        "full_text": "@Nationalist_Om Saab PM kya Kar Rahe hai...hamare army kya Kar Rahe hai...abhi tak kya Ben chod partiya mana rahe hai.....2019jeet ki????? Ma ki chut Randi mamta ki",
+        "truncated": false,
+        "display_text_range": [
+            16,
+            164
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "Nationalist_Om",
+                    "name": "Pushpendra Kulshrestha",
+                    "id": 1084662134858891264,
+                    "id_str": "1084662134858891264",
+                    "indices": [
+                        0,
+                        15
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1135945270741487616,
+        "in_reply_to_status_id_str": "1135945270741487616",
+        "in_reply_to_user_id": 1084662134858891264,
+        "in_reply_to_user_id_str": "1084662134858891264",
+        "in_reply_to_screen_name": "Nationalist_Om",
+        "user": {
+            "id": 1126039733795090432,
+            "id_str": "1126039733795090432",
+            "name": "Rockey",
+            "screen_name": "Rockey90023741",
+            "location": "",
+            "description": "desh premi.....desh k liye jina aur marna...big fan Rajiv Dixit ji.... ager mokka Mila to desh k gaddar netao ki gand mei goli marunga ....bus koi ek mokka do",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 21,
+            "friends_count": 61,
+            "listed_count": 0,
+            "created_at": "Wed May 08 08:22:48 +0000 2019",
+            "favourites_count": 4418,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 808,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 1,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Tue Jun 04 14:59:15 +0000 2019",
+        "id": 1135923979099631617,
+        "id_str": "1135923979099631617",
+        "full_text": "@MamataOfficial,Mamta Banerjee tm Muslim bastard ki rakhail hai, Tm ek Ghamandi aur Andhi hai Desh ki sabse badi#Randi hai.\nJai Shree Ram!",
+        "truncated": false,
+        "display_text_range": [
+            0,
+            138
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        0,
+                        15
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": 2526794479,
+        "in_reply_to_user_id_str": "2526794479",
+        "in_reply_to_screen_name": "MamataOfficial",
+        "user": {
+            "id": 951128360758927360,
+            "id_str": "951128360758927360",
+            "name": "Arya Vats",
+            "screen_name": "Aryavats18",
+            "location": "kolkata",
+            "description": "25-09-2023 is last ambition of my life.",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 1,
+            "friends_count": 5,
+            "listed_count": 0,
+            "created_at": "Wed Jan 10 16:27:27 +0000 2018",
+            "favourites_count": 1,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 5,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/953795609898528768/-vZ5y6Zr_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/953795609898528768/-vZ5y6Zr_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Mon Jun 03 06:30:32 +0000 2019",
+        "id": 1135433569189281792,
+        "id_str": "1135433569189281792",
+        "full_text": "@MamataOfficial Aree O Madarchod Bhenchod chuthiyan Randi Mamta...... bol saali ....Jai Shree Ram....",
+        "truncated": false,
+        "display_text_range": [
+            16,
+            101
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        0,
+                        15
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1135163695162568704,
+        "in_reply_to_status_id_str": "1135163695162568704",
+        "in_reply_to_user_id": 2526794479,
+        "in_reply_to_user_id_str": "2526794479",
+        "in_reply_to_screen_name": "MamataOfficial",
+        "user": {
+            "id": 1048775810696577030,
+            "id_str": "1048775810696577030",
+            "name": "Welcome to Modi's New India",
+            "screen_name": "ModifiedIndia_1",
+            "location": "Mumbai, India",
+            "description": "Anti Secular, Firm supporter of Hindu Rashtra...Bharat mein agar rahena hoga Modi Modi kahena hoga...Jai Shree Ram..Vande Matram, Jai Hind..",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 149,
+            "friends_count": 175,
+            "listed_count": 0,
+            "created_at": "Sun Oct 07 03:23:33 +0000 2018",
+            "favourites_count": 2532,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": true,
+            "verified": false,
+            "statuses_count": 1616,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1113805546887553026/WZd-I_eD_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1113805546887553026/WZd-I_eD_normal.jpg",
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1048775810696577030/1551700290",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 1,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Mon Jun 03 03:41:18 +0000 2019",
+        "id": 1135390980473884672,
+        "id_str": "1135390980473884672",
+        "full_text": "@mamata_for_PM Maderchod kuttiya Randi Saali desh or dharm ki Gaddar Randi h tu mamta bano",
+        "truncated": false,
+        "display_text_range": [
+            0,
+            90
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "mamata_for_PM",
+                    "name": "Mamta Banerji For PM",
+                    "id": 734940956584116225,
+                    "id_str": "734940956584116225",
+                    "indices": [
+                        0,
+                        14
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": 734940956584116225,
+        "in_reply_to_user_id_str": "734940956584116225",
+        "in_reply_to_screen_name": "mamata_for_PM",
+        "user": {
+            "id": 999610265522946048,
+            "id_str": "999610265522946048",
+            "name": "Manoj Tomar",
+            "screen_name": "ManojTo44812577",
+            "location": "Morena, India",
+            "description": "JAI RAJPUTANA SANGH",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 17,
+            "friends_count": 36,
+            "listed_count": 0,
+            "created_at": "Thu May 24 11:17:13 +0000 2018",
+            "favourites_count": 113,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 83,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1012203076025872384/u3rxIr-b_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1012203076025872384/u3rxIr-b_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Mon Jun 03 03:07:59 +0000 2019",
+        "id": 1135382593061306368,
+        "id_str": "1135382593061306368",
+        "full_text": "@TajinderBagga @MamataOfficial JAI SHRI RAAM , randi ki pilli mamta gaddaarrr deshdrohi kutiya haraaman\ud83d\ude21\ud83d\ude21\ud83d\ude21",
+        "truncated": false,
+        "display_text_range": [
+            31,
+            106
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "TajinderBagga",
+                    "name": "Tajinder Pal Singh Bagga",
+                    "id": 85462891,
+                    "id_str": "85462891",
+                    "indices": [
+                        0,
+                        14
+                    ]
+                },
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        15,
+                        30
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1135202141495152640,
+        "in_reply_to_status_id_str": "1135202141495152640",
+        "in_reply_to_user_id": 85462891,
+        "in_reply_to_user_id_str": "85462891",
+        "in_reply_to_screen_name": "TajinderBagga",
+        "user": {
+            "id": 1102906230102679552,
+            "id_str": "1102906230102679552",
+            "name": "MODI FAN SARDAAR IS KINGGG\ud83d\udc4d",
+            "screen_name": "AbhiSha43750046",
+            "location": "",
+            "description": "cricket",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 8,
+            "friends_count": 56,
+            "listed_count": 0,
+            "created_at": "Tue Mar 05 12:18:31 +0000 2019",
+            "favourites_count": 754,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 800,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1129273397764952064/kLkKBGEI_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1129273397764952064/kLkKBGEI_normal.jpg",
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1102906230102679552/1558008897",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 1,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Sun Jun 02 15:58:02 +0000 2019",
+        "id": 1135213995864887296,
+        "id_str": "1135213995864887296",
+        "full_text": "@PMOIndia Saab aisa kya hai Jo Mamta randi abhi tak hinsa Karwa rahe hai bangaal mei??? Aur pathar baaz apni mummy chudwane k liye army KO pathar marte hai...I request you sir Kuch kare plssss",
+        "truncated": false,
+        "display_text_range": [
+            0,
+            192
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "PMOIndia",
+                    "name": "PMO India",
+                    "id": 471741741,
+                    "id_str": "471741741",
+                    "indices": [
+                        0,
+                        9
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": 471741741,
+        "in_reply_to_user_id_str": "471741741",
+        "in_reply_to_screen_name": "PMOIndia",
+        "user": {
+            "id": 1126039733795090432,
+            "id_str": "1126039733795090432",
+            "name": "Rockey",
+            "screen_name": "Rockey90023741",
+            "location": "",
+            "description": "desh premi.....desh k liye jina aur marna...big fan Rajiv Dixit ji.... ager mokka Mila to desh k gaddar netao ki gand mei goli marunga ....bus koi ek mokka do",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 21,
+            "friends_count": 61,
+            "listed_count": 0,
+            "created_at": "Wed May 08 08:22:48 +0000 2019",
+            "favourites_count": 4418,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 808,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Sun Jun 02 15:56:14 +0000 2019",
+        "id": 1135213544218062849,
+        "id_str": "1135213544218062849",
+        "full_text": "@SAMBIT_PATRAg Gand mei goli maro aise maderchod logo KO aur aise netao KO Jo aise logo Ka sath dete hai ....ab to aap satta m hai...kya ab BHI hamare army pathar khayege???? Aur wo Randi mamta bangaal m hinsa karwayege??? Sir thode BHI desh bhakti hai to Kuch kare aap",
+        "truncated": false,
+        "display_text_range": [
+            15,
+            269
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "SAMBIT_PATRAg",
+                    "name": "\ud83d\udde3\ufe0fSAMBIT\ud83c\uddee\ud83c\uddf3PATRA\ud83d\udd49\ufe0f\ud83d\udc26",
+                    "id": 1056183704005959681,
+                    "id_str": "1056183704005959681",
+                    "indices": [
+                        0,
+                        14
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1135157285414526977,
+        "in_reply_to_status_id_str": "1135157285414526977",
+        "in_reply_to_user_id": 1056183704005959681,
+        "in_reply_to_user_id_str": "1056183704005959681",
+        "in_reply_to_screen_name": "SAMBIT_PATRAg",
+        "user": {
+            "id": 1126039733795090432,
+            "id_str": "1126039733795090432",
+            "name": "Rockey",
+            "screen_name": "Rockey90023741",
+            "location": "",
+            "description": "desh premi.....desh k liye jina aur marna...big fan Rajiv Dixit ji.... ager mokka Mila to desh k gaddar netao ki gand mei goli marunga ....bus koi ek mokka do",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 21,
+            "friends_count": 61,
+            "listed_count": 0,
+            "created_at": "Wed May 08 08:22:48 +0000 2019",
+            "favourites_count": 4418,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 808,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 1,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Sun Jun 02 12:10:28 +0000 2019",
+        "id": 1135156728016674817,
+        "id_str": "1135156728016674817",
+        "full_text": "@TajinderBagga @MamataOfficial Saab Sarkar apki hai...army kis liye hai ma ki bhosdi Randi mamta ki...Modi ji chup kyu hai...kyu unke gar se to koi mar nehi Raha????sach hai aur kadwa sach hai Modi ji hath p hath Rakh k bethe hai",
+        "truncated": false,
+        "display_text_range": [
+            31,
+            229
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "TajinderBagga",
+                    "name": "Tajinder Pal Singh Bagga",
+                    "id": 85462891,
+                    "id_str": "85462891",
+                    "indices": [
+                        0,
+                        14
+                    ]
+                },
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        15,
+                        30
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1135012514201137152,
+        "in_reply_to_status_id_str": "1135012514201137152",
+        "in_reply_to_user_id": 85462891,
+        "in_reply_to_user_id_str": "85462891",
+        "in_reply_to_screen_name": "TajinderBagga",
+        "user": {
+            "id": 1126039733795090432,
+            "id_str": "1126039733795090432",
+            "name": "Rockey",
+            "screen_name": "Rockey90023741",
+            "location": "",
+            "description": "desh premi.....desh k liye jina aur marna...big fan Rajiv Dixit ji.... ager mokka Mila to desh k gaddar netao ki gand mei goli marunga ....bus koi ek mokka do",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 21,
+            "friends_count": 61,
+            "listed_count": 0,
+            "created_at": "Wed May 08 08:22:48 +0000 2019",
+            "favourites_count": 4418,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 808,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1136691483086532608/_GQf2SGn_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Sun Jun 02 06:03:59 +0000 2019",
+        "id": 1135064499684167680,
+        "id_str": "1135064499684167680",
+        "full_text": "@MamataOfficial Randi mamta \nTeri gand me alu dalenge janta\nKuttiya Randi sali \nBich raste me Teri gand marenge hum\nChut fadke rod dalenge",
+        "truncated": false,
+        "display_text_range": [
+            16,
+            138
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        0,
+                        15
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1131883219010199553,
+        "in_reply_to_status_id_str": "1131883219010199553",
+        "in_reply_to_user_id": 2526794479,
+        "in_reply_to_user_id_str": "2526794479",
+        "in_reply_to_screen_name": "MamataOfficial",
+        "user": {
+            "id": 1007860773312315392,
+            "id_str": "1007860773312315392",
+            "name": "Kiran Das",
+            "screen_name": "KiranDa80189160",
+            "location": "Balugaon, Khordha, India",
+            "description": "I'm an actor in #Belabhumi_Natya_Sangha, Balugaon, Khordha..\nI've completed my graduation in #Balugaon College with English Honours..\nAnd Also a Cameraman.",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 3,
+            "friends_count": 75,
+            "listed_count": 0,
+            "created_at": "Sat Jun 16 05:41:48 +0000 2018",
+            "favourites_count": 75,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 62,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1039855189723758592/q8bIzA0S_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1039855189723758592/q8bIzA0S_normal.jpg",
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1007860773312315392/1529128529",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": true,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Sat Jun 01 20:06:40 +0000 2019",
+        "id": 1134914178869747713,
+        "id_str": "1134914178869747713",
+        "full_text": "@MamataOfficial maa ki chut Teri Mamta benerjee, madarchod pork kha tu, Jai shree ram bolne PE arrest karwaegi tu Randi.\nJai shree RAM\nUkhad Jo ukhadna h",
+        "truncated": false,
+        "display_text_range": [
+            0,
+            153
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        0,
+                        15
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": 2526794479,
+        "in_reply_to_user_id_str": "2526794479",
+        "in_reply_to_screen_name": "MamataOfficial",
+        "user": {
+            "id": 778846970182000640,
+            "id_str": "778846970182000640",
+            "name": "Sourav Malik",
+            "screen_name": "souravmalik1551",
+            "location": "",
+            "description": "",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 15,
+            "friends_count": 15,
+            "listed_count": 1,
+            "created_at": "Thu Sep 22 06:42:42 +0000 2016",
+            "favourites_count": 138,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 845,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1003643645633835009/TrA4nbUx_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1003643645633835009/TrA4nbUx_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    },
+    {
+        "created_at": "Sat Jun 01 20:03:29 +0000 2019",
+        "id": 1134913375580725248,
+        "id_str": "1134913375580725248",
+        "full_text": "@MajorPoonia @vksnyk @MamataOfficial As ka bhosda is Randi Mamta Khan ki, ise sali ko pork khilao Bangladeshi ko",
+        "truncated": false,
+        "display_text_range": [
+            37,
+            112
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "user_mentions": [
+                {
+                    "screen_name": "MajorPoonia",
+                    "name": "Major Surendra Poonia",
+                    "id": 769108935726997504,
+                    "id_str": "769108935726997504",
+                    "indices": [
+                        0,
+                        12
+                    ]
+                },
+                {
+                    "screen_name": "vksnyk",
+                    "name": "Chowkidar Nayak",
+                    "id": 2958528338,
+                    "id_str": "2958528338",
+                    "indices": [
+                        13,
+                        20
+                    ]
+                },
+                {
+                    "screen_name": "MamataOfficial",
+                    "name": "Mamata Banerjee",
+                    "id": 2526794479,
+                    "id_str": "2526794479",
+                    "indices": [
+                        21,
+                        36
+                    ]
+                }
+            ],
+            "urls": []
+        },
+        "metadata": {
+            "iso_language_code": "hi",
+            "result_type": "recent"
+        },
+        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+        "in_reply_to_status_id": 1134351928635379712,
+        "in_reply_to_status_id_str": "1134351928635379712",
+        "in_reply_to_user_id": 769108935726997504,
+        "in_reply_to_user_id_str": "769108935726997504",
+        "in_reply_to_screen_name": "MajorPoonia",
+        "user": {
+            "id": 778846970182000640,
+            "id_str": "778846970182000640",
+            "name": "Sourav Malik",
+            "screen_name": "souravmalik1551",
+            "location": "",
+            "description": "",
+            "url": null,
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "protected": false,
+            "followers_count": 15,
+            "friends_count": 15,
+            "listed_count": 1,
+            "created_at": "Thu Sep 22 06:42:42 +0000 2016",
+            "favourites_count": 138,
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "verified": false,
+            "statuses_count": 845,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "is_translation_enabled": false,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": null,
+            "profile_background_image_url_https": null,
+            "profile_background_tile": false,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1003643645633835009/TrA4nbUx_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1003643645633835009/TrA4nbUx_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "has_extended_profile": false,
+            "default_profile": true,
+            "default_profile_image": false,
+            "following": false,
+            "follow_request_sent": false,
+            "notifications": false,
+            "translator_type": "none"
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 0,
+        "favorite_count": 0,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "hi"
+    }
+]

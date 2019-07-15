@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>HASOC English/Hindi - Register</title>
+
+  <link href="{{ url_for('static',filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+        type="text/css">
+  <link href="{{ url_for('static',filename='vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet"
+        type="text/css">
+  <link href="{{ url_for('static',filename='css/css/sb-admin.css') }}" rel="stylesheet" type="text/css">
+
+  <script type="text/JavaScript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="{{ url_for('static',filename='js/jQuery-plugin-progressbar.js') }}"></script>
+
+</head>
+
+<body class="bg-dark">
+
+<div class="container">
+  <div class="row">
+    <div class="card card-register mx-auto mt-5 col-sm-5">
+      <div class="card-header">Assigned Start end</div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-responsive" id="dataTable">
+            <thead class="thead-dark">
+              <tr>
+                <th width=25%>
+                  Username
+                </th>
+                <th width=25%>
+                  Start
+                </th>
+                <th width=25%>
+                  End
+                </th>
+                <th width=25%>
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for username in data %}
+                <tr>
+                  <td>
+                    {{ username }}
+                  </td>
+                  <td>
+                    {{ data[username]['start_end'][0] }}
+                  </td>
+                  <td>
+                    {{ data[username]['start_end'][1] }}
+                  </td>
+                  <td>
+                    {{ len(data[username]['annoted_tweets']) }}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card card-register mx-auto mt-5 col-sm-5">
+    <div class="card-header">Register an Account</div>
+    <div class="card-body">
+      <form method="POST" action="/register">
+        <div class="form-group">
+          <div class="form-label-group">
+            <input name="name" type="text" id="name" class="form-control" placeholder="Name" required="required">
+            <label for="name">Name</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-label-group">
+            <input name="uname" type="text" id="uname" class="form-control" placeholder="Username" required="required">
+            <label for="uname">Username</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-label-group">
+            <input name="start" type="number" id="start" class="form-control" placeholder="Start Index" required="required">
+            <label for="start">Start Index</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-label-group">
+            <input name="end" type="number" id="end" class="form-control" placeholder="End Index" required="required">
+            <label for="end">End Index</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input name="pwd" type="password" id="inputPassword" class="form-control" placeholder="Password"
+                       required="required">
+                <label for="inputPassword">Password</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input name="cpwd" type="password" id="confirmPassword" class="form-control" placeholder="Confirm password"
+                       required="required">
+                <label for="confirmPassword">Confirm password</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" href="/login">Register</button>
+      </form>
+      <div class="text-center">
+        <a class="d-block small mt-3" href="/login">Login Page</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ url_for('static',filename='js/sb-admin.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/demo/datatables-demo.js') }}"></script>
+
+</body>
+
+</html>

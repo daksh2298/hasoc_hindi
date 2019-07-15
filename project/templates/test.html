@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+{% set count = [0] %}
+<h4>Best approach:-
+{% set odd_even={
+  'odd':0,
+  'even':0
+} %}
+{% for l in li %}
+  {% if l%2 == 0 %}
+    {% if odd_even.update({'even' : odd_even['even'] + 1}) %}
+    {% endif %}
+  {% elif odd_even.update({'odd' : odd_even['odd'] + 1}) %}
+  {% endif %}
+{% endfor %}
+  {{ odd_even }}</h4>
+
+<br>
+<br>
+
+{% for l in li %}
+  {% if count.append(count.pop() + 1) %}
+  {% endif %} {# increment count by 1 #}
+  <br>Increasing by approach 1
+  {{ count[0] }}
+  {#    {{ li.count(1) }}#}
+{% endfor %}
+<br>
+<br>
+<br>
+<br>
+
+{% set count = namespace(a=0) %}
+{% for i in li %}
+  {% set count.a = count.a + 1 %}
+  <br>Increasing by approach 2
+  {{ count.a }}
+{% endfor %}
+</body>
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+</head>
+</html>
