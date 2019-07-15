@@ -84,13 +84,13 @@ def get_tweet_ids(data):
         ids.append((tweet['id_str'], 0))
     return ids
 
-def write_json(data,filename):
-    write_data=json.dumps(data,indent=2)
-    file_ptr=open(filename,'w')
+
+def write_json(data, filename):
+    write_data = json.dumps(data, indent=2)
+    file_ptr = open(filename, 'w')
     file_ptr.write(write_data)
     file_ptr.close()
     return 'success'
-
 
 
 def split_data():
@@ -107,26 +107,27 @@ def split_data():
         print(len(assign_dict))
         for user in active_users:
             user_data = all_user_data[user]
-            user_data['to_be_annotated']=[]
+            user_data['to_be_annotated'] = []
             for tweet in all_tweets:
                 id_str = tweet['id_str']
                 assigned_count = assign_dict[id_str]
-                if split_users[user]>0 and assigned_count < 1:
+                if split_users[user] > 0 and assigned_count < 1:
                     user_data['to_be_annotated'].append(id_str)
                     assign_dict[id_str] += 1
                     split_users[user] -= 1
-            user_data['total_assigned']=len(user_data['to_be_annotated'])
-            print('Assigned {} to {}.'.format(user_data['total_assigned'],user))
+            user_data['total_assigned'] = len(user_data['to_be_annotated'])
+            print('Assigned {} to {}.'.format(user_data['total_assigned'], user))
         # all_assigned_check=[all_user_data[user]['to_be_annotated'] for user in all_user_data]
-        all_assigned_check=[]
+        all_assigned_check = []
         for user in all_user_data:
-            all_assigned_check+=all_user_data[user]['to_be_annotated']
+            all_assigned_check += all_user_data[user]['to_be_annotated']
         print(len(all_assigned_check))
         print(len(set(all_assigned_check)))
-        if len(assign_dict)==len(set(all_assigned_check)):
+        if len(assign_dict) == len(set(all_assigned_check)):
             print('All tweets distributed successfully')
 
-        write_json(all_user_data,'annoted_tweets.json')
+        write_json(all_user_data, 'annoted_tweets.json')
+
 
 reset_json('annoted_tweets.json')
 split_data()

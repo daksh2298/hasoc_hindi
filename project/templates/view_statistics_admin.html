@@ -71,7 +71,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ url_for('manage_users') }}">
-          <i class="fas fa-cog"></i>
+          <i class="fas fa-cogs"></i>
           <span>Manage users</span>
         </a>
       </li>
@@ -138,7 +138,7 @@
                   <tbody>
                   {% for username in data %}
                     {% if data[username]['active'] %}
-                      <tr>
+                      <tr class="font-weight-normal">
                         <td>
                           {{ username }}
                         </td>
@@ -153,15 +153,6 @@
                         </td>
                       </tr>
                     {% endif %}
-{#                      <tr class="text-muted">#}
-{#                        <td>#}
-{#                          {{ username }}#}
-{#                        </td>#}
-{#                        <td colspan="3">#}
-{#                          <span>No tweets assigned! Hence temporarily deactivated.</span>#}
-{#                        </td>#}
-{#                      </tr>#}
-{#                    {% endif %}#}
                   {% endfor %}
                   </tbody>
                 </table>
