@@ -300,7 +300,7 @@ def get_agg(data):
         'task_2_un': [],
         'task_3_un': []
     }
-    print(data)
+    # print(data)
     results, ignore = clean_data(data)
     if len(data):
         print('inside if')
@@ -316,14 +316,18 @@ def get_agg(data):
                     temp_1.append(annot[0])
                     temp_2.append(annot[1])
                     temp_3.append(annot[2])
-            all_tasks['task_1'].append(tuple(set(temp_1)))
-            all_tasks['task_2'].append(tuple(set(temp_2)))
-            all_tasks['task_3'].append(tuple(set(temp_3)))
+            if len(temp_1):
+                all_tasks['task_1'].append(tuple(set(temp_1)))
+            if len(temp_2):
+                all_tasks['task_2'].append(tuple(set(temp_2)))
+            if len(temp_3):
+                all_tasks['task_3'].append(tuple(set(temp_3)))
         for task in ['task_1', 'task_2', 'task_3']:
             temp = [result for result in all_tasks[task] if len(result) == 1]
             # print('--------', temp)
             all_tasks[task + '_un'] = temp
         agg = []
+        print(all_tasks )
         for task in ['task_1', 'task_2', 'task_3']:
             # if len(all_tasks[task]):
                 # try:
