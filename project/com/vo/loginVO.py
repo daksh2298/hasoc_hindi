@@ -10,5 +10,6 @@ class registerVO:
     username = StringField
     start = StringField
     end = StringField
+    assigned=StringField
     password = StringField
     c_password = StringField

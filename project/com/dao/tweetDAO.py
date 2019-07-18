@@ -116,3 +116,11 @@ class tweetDAO:
         query="SELECT * FROM annoted_tweets"
         cursor.execute(query)
         return list(cursor.fetchall())
+
+    def get_active_users(self):
+        cursor = conn.cursor()
+        query = 'SELECT username from users WHERE active=1'
+        cursor.execute(query)
+        users = cursor.fetchall()
+        users = [user[0] for user in users]
+        return users

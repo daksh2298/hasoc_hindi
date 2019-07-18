@@ -3,7 +3,7 @@ from project import app
 from project.com.dao import conn_db
 from project.com.vo.tweetVO import tweetVO
 from project.com.dao.tweetDAO import tweetDAO
-from project.com.dao.loginDAO import loginDAO
+# from project.com.dao.loginDAO import loginDAO
 
 import datetime
 import copy
@@ -470,9 +470,9 @@ def get_analysis(all_tasks):
 def stats():
     if session.get('user') == 'admin':
         tweetvo = tweetVO()
-        logindao = loginDAO()
+        # logindao = loginDAO()
         tweetdao=tweetDAO()
-        active_users=logindao.get_active_users()
+        active_users=tweetdao.get_active_users()
         all_tweets = tweetdao.get_all_tweets()
         # tweet_ids = [row[1] for row in all_tweets]
         all_data, double_count = clean_data(all_tweets)
