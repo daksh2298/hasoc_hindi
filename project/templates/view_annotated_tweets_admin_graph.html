@@ -70,11 +70,11 @@
       </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('manage_users') }}">
-          <i class="fas fa-cogs"></i>
-          <span>Manage users</span>
-        </a>
-      </li>
+      <a class="nav-link" href="{{ url_for('manage_users') }}">
+        <i class="fas fa-cogs"></i>
+        <span>Manage users</span>
+      </a>
+    </li>
   </ul>
 
   <div id="content-wrapper">
@@ -134,135 +134,54 @@
                   </div>
                 </div>
                 <script type="text/javascript">
-                    var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
-                    var chBar = document.getElementById("chBar_{{ user }}_task_1");
-                    if (chBar) {
-                        new Chart(chBar, {
-                            type: 'bar',
-                            data: {
-                                labels: ["HOF", "NOT"],
-                                datasets: [{
-                                    data: [{{ annotated_tweets_users[user][-1]['HOF_COUNT'] }}, 0],
-                                    backgroundColor: colors[4]
-                                },
-                                    {
-                                        data: [0, {{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}],
-                                        backgroundColor: colors[1]
-                                    }]
-                            },
-                            options: {
-                                legend: {
-                                    display: false
-                                },
-                                scales: {
-                                    xAxes: [{
-                                        barPercentage: 0.4,
-                                        categoryPercentage: 0.5
-                                    }],
-                                    yAxes: [{
-                                        ticks: {
-                                            min: 0,
-                                            max: ({{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}+{{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}) * 10 + 10,
-                                            maxTicksLimit: 5
-                                        },
-                                        gridLines: {
-                                            display: true
-                                        }
-                                    }],
-                                }
-                            }
-                        });
-                    }
+                  Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+                  Chart.defaults.global.defaultFontColor = '#292b2c';
+                  var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
+                  var chBar = document.getElementById("chBar_{{ user }}_task_1");
+                  if (chBar) {
+                    new Chart(chBar, {
+                      type: 'pie',
+                      data: {
+                        labels: ["HOF", "NOT"],
+                        datasets: [{
+                          backgroundColor: ["#FF0000", "#008000"],
+                          data: [{{ annotated_tweets_users[user][-1]['HOF_COUNT'] }},{{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}],
+                        }]
+                      },
+                    });
+                  }
                 </script>
                 <script type="text/javascript">
-                    var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
-                    var chBar = document.getElementById("chBar_{{ user }}_task_2");
-                    if (chBar) {
-                        new Chart(chBar, {
-                            type: 'bar',
-                            data: {
-                                labels: ["HATE", "OFFN", "PRFN"],
-                                datasets: [{
-                                    data: [{{ annotated_tweets_users[user][-1]['HATE_COUNT'] }}, 0, 0],
-                                    backgroundColor: colors[4]
-                                },
-                                    {
-                                        data: [0, {{ annotated_tweets_users[user][-1]['OFFN_COUNT'] }}, 0],
-                                        backgroundColor: colors[0]
-                                    },
-                                    {
-                                        data: [0, 0, {{ annotated_tweets_users[user][-1]['PRFN_COUNT'] }}],
-                                        backgroundColor: colors[2]
-                                    }]
-                            },
-                            options: {
-                                legend: {
-                                    display: false
-                                },
-                                scales: {
-                                    xAxes: [{
-                                        barPercentage: 0.4,
-                                        categoryPercentage: 0.5
-                                    }],
-                                    yAxes: [{
-                                        ticks: {
-                                            min: 0,
-                                            max: ({{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}+{{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}) * 10 + 10,
-                                            maxTicksLimit: 5
-                                        },
-                                        gridLines: {
-                                            display: true
-                                        }
-                                    }],
-                                }
-                            }
-                        });
-                    }
+                  var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
+                  var chBar = document.getElementById("chBar_{{ user }}_task_2");
+                  if (chBar) {
+                    new Chart(chBar, {
+                      type: 'pie',
+                      data: {
+                        labels: ["HATE", "OFFN", "PRFN"],
+                        datasets: [{
+                          backgroundColor: [colors[4],colors[0], colors[2]],
+                          data: [{{ annotated_tweets_users[user][-1]['HATE_COUNT'] }},{{ annotated_tweets_users[user][-1]['OFFN_COUNT'] }},{{ annotated_tweets_users[user][-1]['PRFN_COUNT'] }}],
+                        }]
+                      },
+                    });
+                  }
                 </script>
                 <script type="text/javascript">
-                    var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
-                    var chBar = document.getElementById("chBar_{{ user }}_task_3");
-                    if (chBar) {
-                        new Chart(chBar, {
-                            type: 'bar',
-                            data: {
-                                labels: ["UNT", "TIN", "NULL"],
-                                datasets: [{
-                                    data: [{{ annotated_tweets_users[user][-1]['UNT_COUNT'] }}, 0, 0],
-                                    backgroundColor: colors[4]
-                                },
-                                    {
-                                        data: [0, {{ annotated_tweets_users[user][-1]['TIN_COUNT'] }}, 0],
-                                        backgroundColor: colors[0]
-                                    },
-                                    {
-                                        data: [0, 0, {{ annotated_tweets_users[user][-1]['NULL_COUNT'] }}],
-                                        backgroundColor: colors[2]
-                                    }]
-                            },
-                            options: {
-                                legend: {
-                                    display: false
-                                },
-                                scales: {
-                                    xAxes: [{
-                                        barPercentage: 0.4,
-                                        categoryPercentage: 0.5
-                                    }],
-                                    yAxes: [{
-                                        ticks: {
-                                            min: 0,
-                                            max: ({{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}+{{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}) * 2 + 10,
-                                            maxTicksLimit: 5
-                                        },
-                                        gridLines: {
-                                            display: true
-                                        }
-                                    }],
-                                }
-                            }
-                        });
-                    }
+                  var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
+                  var chBar = document.getElementById("chBar_{{ user }}_task_3");
+                  if (chBar) {
+                    new Chart(chBar, {
+                      type: 'pie',
+                      data: {
+                        labels: ["UNT", "TIN", "NULL"],
+                        datasets: [{
+                          backgroundColor: [colors[4],colors[0], colors[2]],
+                          data: [{{ annotated_tweets_users[user][-1]['UNT_COUNT'] }},{{ annotated_tweets_users[user][-1]['TIN_COUNT'] }},{{ annotated_tweets_users[user][-1]['NULL_COUNT'] }}],
+                        }]
+                      }
+                    });
+                  }
                 </script>
               </div>
               {% if annotated_tweets_users[user][-1]['NOT_COUNT'] == 0 and annotated_tweets_users[user][-1]['HOF_COUNT'] == 0 %}
