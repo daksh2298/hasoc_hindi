@@ -101,89 +101,99 @@
                 <i class="fas fa-chart-bar"></i>
                 <b>{{ user }}'s</b> Annotation chart
               </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="card col-sm-5">
-                    <div class="card-header">
-                      <h6>Task 1</h6>
+              {% if data_json[user].active %}
+                <div class="card-body">
+                {% if annotated_tweets_users[user][-1]['NOT_COUNT'] == 0 and annotated_tweets_users[user][-1]['HOF_COUNT'] == 0 %}
+                  <span class="alert-primary">&nbsp;{{ user }} has not started annotations yet! &nbsp;</span>
+                {% else %}
+                  <div class="row">
+                    <div class="card col-sm-5">
+                      <div class="card-header">
+                        <h6>Task 1</h6>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="chBar_{{ user }}_task_1" width="100%" height="65"></canvas>
+                      </div>
                     </div>
-                    <div class="card-body">
-                      <canvas id="chBar_{{ user }}_task_1" width="100%" height="65"></canvas>
+                    <div class="col-sm-1"></div>
+                    <div class="card col-sm-5">
+                      <div class="card-header">
+                        <h6>Task 2</h6>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="chBar_{{ user }}_task_2" width="100%" height="65"></canvas>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-sm-1"></div>
-                  <div class="card col-sm-5">
-                    <div class="card-header">
-                      <h6>Task 2</h6>
-                    </div>
-                    <div class="card-body">
-                      <canvas id="chBar_{{ user }}_task_2" width="100%" height="65"></canvas>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="card col-sm-5">
+                      <div class="card-header">
+                        <h6>Task 3</h6>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="chBar_{{ user }}_task_3" width="100%" height="65"></canvas>
+                      </div>
                     </div>
                   </div>
+                  <script type="text/javascript">
+                    Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+                    Chart.defaults.global.defaultFontColor = '#292b2c';
+                    var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
+                    var chBar = document.getElementById("chBar_{{ user }}_task_1");
+                    if (chBar) {
+                      new Chart(chBar, {
+                        type: 'pie',
+                        data: {
+                          labels: ["HOF", "NOT"],
+                          datasets: [{
+                            backgroundColor: ["#FF0000", "#008000"],
+                            data: [{{ annotated_tweets_users[user][-1]['HOF_COUNT'] }}, {{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}],
+                          }]
+                        },
+                      });
+                    }
+                  </script>
+                  <script type="text/javascript">
+                    var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
+                    var chBar = document.getElementById("chBar_{{ user }}_task_2");
+                    if (chBar) {
+                      new Chart(chBar, {
+                        type: 'pie',
+                        data: {
+                          labels: ["HATE", "OFFN", "PRFN"],
+                          datasets: [{
+                            backgroundColor: [colors[4], colors[0], colors[2]],
+                            data: [{{ annotated_tweets_users[user][-1]['HATE_COUNT'] }}, {{ annotated_tweets_users[user][-1]['OFFN_COUNT'] }}, {{ annotated_tweets_users[user][-1]['PRFN_COUNT'] }}],
+                          }]
+                        },
+                      });
+                    }
+                  </script>
+                  <script type="text/javascript">
+                    var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
+                    var chBar = document.getElementById("chBar_{{ user }}_task_3");
+                    if (chBar) {
+                      new Chart(chBar, {
+                        type: 'pie',
+                        data: {
+                          labels: ["UNT", "TIN", "NULL"],
+                          datasets: [{
+                            backgroundColor: [colors[4], colors[0], colors[2]],
+                            data: [{{ annotated_tweets_users[user][-1]['UNT_COUNT'] }}, {{ annotated_tweets_users[user][-1]['TIN_COUNT'] }}, {{ annotated_tweets_users[user][-1]['NULL_COUNT'] }}],
+                          }]
+                        }
+                      });
+                    }
+                  </script>
+                {% endif %}
                 </div>
-                <br>
-                <div class="row">
-                  <div class="col-sm-3"></div>
-                  <div class="card col-sm-5">
-                    <div class="card-header">
-                      <h6>Task 3</h6>
-                    </div>
-                    <div class="card-body">
-                      <canvas id="chBar_{{ user }}_task_3" width="100%" height="65"></canvas>
-                    </div>
-                  </div>
+              {% else %}
+                <div class="card-body">
+                <span class="alert-danger">&nbsp;{{ user }} TEMPORARILY DEACTIVATED&nbsp;</span>
                 </div>
-                <script type="text/javascript">
-                  Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-                  Chart.defaults.global.defaultFontColor = '#292b2c';
-                  var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
-                  var chBar = document.getElementById("chBar_{{ user }}_task_1");
-                  if (chBar) {
-                    new Chart(chBar, {
-                      type: 'pie',
-                      data: {
-                        labels: ["HOF", "NOT"],
-                        datasets: [{
-                          backgroundColor: ["#FF0000", "#008000"],
-                          data: [{{ annotated_tweets_users[user][-1]['HOF_COUNT'] }},{{ annotated_tweets_users[user][-1]['NOT_COUNT'] }}],
-                        }]
-                      },
-                    });
-                  }
-                </script>
-                <script type="text/javascript">
-                  var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
-                  var chBar = document.getElementById("chBar_{{ user }}_task_2");
-                  if (chBar) {
-                    new Chart(chBar, {
-                      type: 'pie',
-                      data: {
-                        labels: ["HATE", "OFFN", "PRFN"],
-                        datasets: [{
-                          backgroundColor: [colors[4],colors[0], colors[2]],
-                          data: [{{ annotated_tweets_users[user][-1]['HATE_COUNT'] }},{{ annotated_tweets_users[user][-1]['OFFN_COUNT'] }},{{ annotated_tweets_users[user][-1]['PRFN_COUNT'] }}],
-                        }]
-                      },
-                    });
-                  }
-                </script>
-                <script type="text/javascript">
-                  var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
-                  var chBar = document.getElementById("chBar_{{ user }}_task_3");
-                  if (chBar) {
-                    new Chart(chBar, {
-                      type: 'pie',
-                      data: {
-                        labels: ["UNT", "TIN", "NULL"],
-                        datasets: [{
-                          backgroundColor: [colors[4],colors[0], colors[2]],
-                          data: [{{ annotated_tweets_users[user][-1]['UNT_COUNT'] }},{{ annotated_tweets_users[user][-1]['TIN_COUNT'] }},{{ annotated_tweets_users[user][-1]['NULL_COUNT'] }}],
-                        }]
-                      }
-                    });
-                  }
-                </script>
-              </div>
+              {% endif %}
               {% if annotated_tweets_users[user][-1]['NOT_COUNT'] == 0 and annotated_tweets_users[user][-1]['HOF_COUNT'] == 0 %}
                 <div class="card-footer small text-muted">
                   Annotations not yet started by {{ user }}!!

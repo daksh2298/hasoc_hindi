@@ -123,7 +123,13 @@ def annotated_tweets_admin():
         user = session.get('user')
         tweetvo.username = user
         data_json = read_json('data/annoted_tweets.json')
+        active_users = tweetdao.get_active_users()
         # print(data_json)
+        for user in data_json:
+            if user in active_users:
+                data_json[user]['active']=True
+            else:
+                data_json[user]['active']=False
         resp, annotated_tweets = tweetdao.get_annots_admin()
         if resp == True:
             # print('inside if true')
