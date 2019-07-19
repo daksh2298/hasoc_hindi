@@ -61,7 +61,7 @@ def annot():
 
             if db_status == True:
                 annoted_tweet_ids.append(id_str)
-                data_json[session['user']]['annoted_count']=len(annoted_tweet_ids)
+                data_json[session['user']]['annoted_count'] = len(annoted_tweet_ids)
                 # print(rows)
                 utc_now = datetime.datetime.utcnow()
                 date_list = str(utc_now.date()).split('-')
@@ -127,9 +127,9 @@ def annotated_tweets_admin():
         # print(data_json)
         for user in data_json:
             if user in active_users:
-                data_json[user]['active']=True
+                data_json[user]['active'] = True
             else:
-                data_json[user]['active']=False
+                data_json[user]['active'] = False
         resp, annotated_tweets = tweetdao.get_annots_admin()
         if resp == True:
             # print('inside if true')
@@ -310,7 +310,7 @@ def get_agg(data):
             for annot in result[3:]:
                 if annot != 'en' and annot != 'hi':
                     annot = annot.split('\t')
-                    if len(annot)<3:
+                    if len(annot) < 3:
                         print(result)
                         continue
                     temp_1.append(annot[0])
@@ -327,20 +327,20 @@ def get_agg(data):
             # print('--------', temp)
             all_tasks[task + '_un'] = temp
         agg = []
-        print(all_tasks )
+        # print(all_tasks )
         for task in ['task_1', 'task_2', 'task_3']:
             # if len(all_tasks[task]):
-                # try:
-            un_len=len(all_tasks[task + '_un'])
-            all_len=len(all_tasks[task])
-            if all_len==0:
-                all_len=1
-            temp=(un_len / all_len) * 100
+            # try:
+            un_len = len(all_tasks[task + '_un'])
+            all_len = len(all_tasks[task])
+            if all_len == 0:
+                all_len = 1
+            temp = (un_len / all_len) * 100
             agg.append('%.2f' % temp)
 
     else:
-        agg=['0.00']*3
-    print('here',agg)
+        agg = ['0.00'] * 3
+    print('here', agg)
     return agg
 
 
@@ -402,7 +402,7 @@ def get_tasks(data):
         for annot in result[3:]:
             if annot != 'en' and annot != 'hi':
                 annot = annot.split('\t')
-                if len(annot)<3:
+                if len(annot) < 3:
                     print(result)
                     continue
                 temp_1.append(annot[0])
@@ -418,11 +418,8 @@ def get_tasks(data):
     agg = []
     for task in ['task_1', 'task_2', 'task_3']:
         agg.append('%.2f' % (len(all_tasks[task + '_un']) / len(all_tasks[task]) * 100))
-#     print(agg)
+    #     print(agg)
     return all_tasks
-
-
-
 
 
 def get_analysis(all_tasks):
@@ -481,8 +478,8 @@ def stats():
     if session.get('user') == 'admin':
         tweetvo = tweetVO()
         # logindao = loginDAO()
-        tweetdao=tweetDAO()
-        active_users=tweetdao.get_active_users()
+        tweetdao = tweetDAO()
+        active_users = tweetdao.get_active_users()
         all_tweets = tweetdao.get_all_tweets()
         # tweet_ids = [row[1] for row in all_tweets]
         all_data, double_count = clean_data(all_tweets)
@@ -494,9 +491,9 @@ def stats():
 
         for user in data:
             if user in active_users:
-                data[user]['active']=True
+                data[user]['active'] = True
             else:
-                data[user]['active']=False
+                data[user]['active'] = False
 
         statistics = {
             'same_annots': len_same,
@@ -506,4 +503,3 @@ def stats():
         return render_template('view_statistics_admin.html', data=data, len=len, statistics=statistics, aggs=aggs)
     else:
         return redirect(url_for('home'))
-
