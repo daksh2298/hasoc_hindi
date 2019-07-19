@@ -1,2 +1,6 @@
 __pycache__
 .idea
+*.pyc
+.DS_Store
+*.cpython-37.pyc
+*.cpython-36.pyc
