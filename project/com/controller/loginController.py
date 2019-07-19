@@ -148,14 +148,26 @@ def register():
         user.c_password = request.form.get('cpwd')
         resp = registerDao.check_exists(user)
         if len(resp) > 0:
-            return 'Username already taken'
+            script = '''<script>
+                            alert("Username already taken");
+                            window.location.href="/home";
+                        </script>'''
+            return script
         else:
-            resp = registerDao.register_user(user)
-            if resp == True:
-                registerDao.do_necessary_changes(user)
-                return redirect(url_for('home'))
+            if user.password==user.c_password:
+                resp = registerDao.register_user(user)
+                if resp == True:
+                    registerDao.do_necessary_changes(user)
+                    return redirect(url_for('home'))
+                else:
+                    return 'Internal DB error'
             else:
-                return 'Internal DB error'
+                script = '''<script>
+                                alert("Password and confirm password didnot match!!!");
+                                window.location.href="/home";
+                            </script>'''
+                return script
+
 
     else:
         file_ptr = open('data/annoted_tweets.json')
