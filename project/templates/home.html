@@ -200,65 +200,68 @@
                           $('#report_not_english_{{ row[2] }}').click(function () {
                             data = $('#form_not_english_{{ row[2] }}').serialize();
                             data_array = $('#form_not_english_{{ row[2] }}').serializeArray();
-                            $.ajax({
-                              url: '/report_not_english',
-                              data: $('#form_not_english_{{ row[2] }}').serialize(),
-                              type: 'POST',
-                              success: function (response) {
-                                console.log('response', response);
-                                button = $('#button_{{ row[2] }}');
-                                button.attr('disabled', 'disabled');
-                                reset = $('#reset_{{ row[2] }}');
-                                reset.attr('disabled', 'disabled');
-                                tr = $('#row_{{ row[2] }}');
-                                tr.addClass('selected');
-                                tr.addClass('text-muted');
-                                task_table = $('#task_table_{{ row[2] }}');
-                                task_table.addClass('text-muted');
-                                not_r = $("#not_{{ row[2] }}");
-                                hof_r = $("#hof_{{ row[2] }}");
-                                $(not_r).attr('disabled', 'disabled');
-                                $(hof_r).attr('disabled', 'disabled');
-                                hate = document.getElementById('hate_{{ row[2] }}');
-                                offn = document.getElementById('offn_{{ row[2] }}');
-                                prfn = document.getElementById('prfn_{{ row[2] }}');
-                                $(hate).attr('disabled', 'disabled');
-                                $(offn).attr('disabled', 'disabled');
-                                $(prfn).attr('disabled', 'disabled');
-                                unt = $("#unt_{{ row[2] }}");
-                                tin = $("#tin_{{ row[2] }}");
-                                $(unt).attr('disabled', 'disabled');
-                                $(tin).attr('disabled', 'disabled');
-                                report_inc = $("#report_incomplete_{{ row[2] }}");
-                                report_inc.attr('disabled', 'disabled');
-                                report_not = $("#report_not_english_{{ row[2] }}");
-                                report_not.attr('disabled', 'disabled');
-                                var table = $('#dataTable').DataTable();
-                                {% if (row[0] + 1) % 10 == 0 and (row[0]) != 0 %}
-                                  table.page('next').draw('page');
-                                {% endif %}
-                                {% if row[0] < len(rows) - 1 %}
-                                  var element = document.getElementById("row_{{ rows[row[0] + 1][2] }}");
-                                  element.scrollIntoView({behavior: "smooth"});
-                                {% else %}
-                                  var element = document.getElementById("row_{{ rows[row[0] - 1][2] }}");
-                                  element.scrollIntoView({behavior: "smooth"});
-                                {% endif %}
-                                check_reload();
-                              },
-                              error: function (error) {
-                                console.log(error);
-                                alert('Error submitting the tweet! Server Offline');
-                                location.reload();
-                              }
-                            });
+                            if (confirm("Are you sure you want to submit?")){
+                              $.ajax({
+                                url: '/report_not_english',
+                                data: $('#form_not_english_{{ row[2] }}').serialize(),
+                                type: 'POST',
+                                success: function (response) {
+                                  console.log('response', response);
+                                  button = $('#button_{{ row[2] }}');
+                                  button.attr('disabled', 'disabled');
+                                  reset = $('#reset_{{ row[2] }}');
+                                  reset.attr('disabled', 'disabled');
+                                  tr = $('#row_{{ row[2] }}');
+                                  tr.addClass('selected');
+                                  tr.addClass('text-muted');
+                                  task_table = $('#task_table_{{ row[2] }}');
+                                  task_table.addClass('text-muted');
+                                  not_r = $("#not_{{ row[2] }}");
+                                  hof_r = $("#hof_{{ row[2] }}");
+                                  $(not_r).attr('disabled', 'disabled');
+                                  $(hof_r).attr('disabled', 'disabled');
+                                  hate = document.getElementById('hate_{{ row[2] }}');
+                                  offn = document.getElementById('offn_{{ row[2] }}');
+                                  prfn = document.getElementById('prfn_{{ row[2] }}');
+                                  $(hate).attr('disabled', 'disabled');
+                                  $(offn).attr('disabled', 'disabled');
+                                  $(prfn).attr('disabled', 'disabled');
+                                  unt = $("#unt_{{ row[2] }}");
+                                  tin = $("#tin_{{ row[2] }}");
+                                  $(unt).attr('disabled', 'disabled');
+                                  $(tin).attr('disabled', 'disabled');
+                                  report_inc = $("#report_incomplete_{{ row[2] }}");
+                                  report_inc.attr('disabled', 'disabled');
+                                  report_not = $("#report_not_english_{{ row[2] }}");
+                                  report_not.attr('disabled', 'disabled');
+                                  var table = $('#dataTable').DataTable();
+                                  {% if (row[0] + 1) % 10 == 0 and (row[0]) != 0 %}
+                                    table.page('next').draw('page');
+                                  {% endif %}
+                                  {% if row[0] < len(rows) - 1 %}
+                                    var element = document.getElementById("row_{{ rows[row[0] + 1][2] }}");
+                                    element.scrollIntoView({behavior: "smooth"});
+                                  {% else %}
+                                    var element = document.getElementById("row_{{ rows[row[0] - 1][2] }}");
+                                    element.scrollIntoView({behavior: "smooth"});
+                                  {% endif %}
+                                  check_reload();
+                                },
+                                error: function (error) {
+                                  console.log(error);
+                                  alert('Error submitting the tweet! Server Offline');
+                                  location.reload();
+                                }
+                              });
+                            }
                           });
                         });
                         $(function () {
                           $('#report_incomplete_{{ row[2] }}').click(function () {
                             data = $('#form_incomplete_{{ row[2] }}').serialize();
                             data_array = $('#form_incomplete_{{ row[2] }}').serializeArray();
-                            $.ajax({
+                            if (confirm("Are you sure you want to submit?")){
+                              $.ajax({
                               url: '/report_incomplete',
                               data: $('#form_incomplete_{{ row[2] }}').serialize(),
                               type: 'POST',
@@ -310,6 +313,7 @@
                                 location.reload();
                               }
                             });
+                            }
                           });
                         });
                       </script>

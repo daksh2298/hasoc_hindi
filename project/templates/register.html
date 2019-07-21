@@ -27,96 +27,110 @@
 
 <div class="container">
   <div class="row">
-    <div class="card card-register mx-auto mt-5 col-sm-5">
-      <div class="card-header">Assigned Start end</div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-bordered table-responsive" id="dataTable">
-            <thead class="thead-dark">
-              <tr>
-                <th width=25%>
-                  Username
+    <div class="mx-auto mt-5 col-sm-6">
+      <div class="card">
+        <div class="card-header"><i class="fas fa-table"></i> Total Assigned tweets</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-responsive" id="dataTable" style="font-size: 1.1vw;">
+              <thead class="thead-dark">
+              <tr class="text-center">
+                <th width="10%">
+                  <i class="far fa-user"></i> Username
                 </th>
-                <th width=25%>
-                  Start
-                </th>
-                <th width=25%>
-                  End
-                </th>
-                <th width=25%>
-                  Total
+                <th width="10%">
+                  <i class="fas fa-columns"></i> Assigned
                 </th>
               </tr>
-            </thead>
-            <tbody>
-              {% for username in data %}
-                <tr>
-                  <td>
-                    {{ username }}
-                  </td>
-                  <td>
-                    {{ data[username]['start_end'][0] }}
-                  </td>
-                  <td>
-                    {{ data[username]['start_end'][1] }}
-                  </td>
-                  <td>
-                    {{ len(data[username]['annoted_tweets']) }}
-                  </td>
-                </tr>
+              </thead>
+              <tbody>
+              {% for user in data %}
+                {% if data[user]['active'] %}
+                  <tr class="text-center font-weight-normal">
+                    <td>
+                      <span class="text-center">{{ user }}</span>
+                    </td>
+                    <td>
+                      {{ data[user]['total_assigned'] }}
+                    </td>
+                  </tr>
+                {% else %}
+                  <tr class="text-center text-muted font-weight-light">
+                    <td>
+                      <span class="text-center">{{ user }}</span>
+                    </td>
+                    <td>
+                      {{ data[user]['total_assigned'] }}
+                    </td>
+                  </tr>
+                {% endif %}
               {% endfor %}
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
+          <script>
+            $(document).ready(function () {
+              $('#dataTable').DataTable({
+                "order": [[1, "desc"]],
+                "iDisplayLength": 10
+              });
+            });
+          </script>
         </div>
       </div>
     </div>
-    <div class="card card-register mx-auto mt-5 col-sm-5">
-    <div class="card-header">Register an Account</div>
-    <div class="card-body">
-      <form method="POST" action="/register">
-        <div class="form-group">
-          <div class="form-label-group">
-            <input name="name" type="text" id="name" class="form-control" placeholder="Name" required="required">
-            <label for="name">Name</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-label-group">
-            <input name="uname" type="text" id="uname" class="form-control" placeholder="Username" required="required">
-            <label for="uname">Username</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-label-group">
-            <input name="assigned" type="number" id="assigned" class="form-control" placeholder="Start Index" required="required">
-            <label for="assigned">Assign Count</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-row">
-            <div class="col-md-6">
+    <div class="mt-5 col-sm-5">
+      <div class="card card-register">
+        <div class="card-header"><i class="fas fa-user-plus"></i> Register an user</div>
+        <div class="card-body">
+          <form method="POST" action="/register">
+            <div class="form-group">
               <div class="form-label-group">
-                <input name="pwd" type="password" id="inputPassword" class="form-control" placeholder="Password"
-                       required="required">
-                <label for="inputPassword">Password</label>
+                <input name="name" type="text" id="name" class="form-control" placeholder="Name" required="required">
+                <label for="name">Name</label>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="form-group">
               <div class="form-label-group">
-                <input name="cpwd" type="password" id="confirmPassword" class="form-control" placeholder="Confirm password"
+                <input name="uname" type="text" id="uname" class="form-control" placeholder="Username"
                        required="required">
-                <label for="confirmPassword">Confirm password</label>
+                <label for="uname">Username</label>
               </div>
             </div>
+            <div class="form-group">
+              <div class="form-label-group">
+                <input name="assigned" type="number" id="assigned" class="form-control" placeholder="Start Index"
+                       required="required">
+                <label for="assigned">Assign Count</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input name="pwd" type="password" id="inputPassword" class="form-control" placeholder="Password"
+                           required="required">
+                    <label for="inputPassword">Password</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input name="cpwd" type="password" id="confirmPassword" class="form-control"
+                           placeholder="Confirm password"
+                           required="required">
+                    <label for="confirmPassword">Confirm password</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" href="/login">Register</button>
+          </form>
+          <div class="text-center">
+            <a class="d-block small mt-3" href="/login">Login Page</a>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block" href="/login">Register</button>
-      </form>
-      <div class="text-center">
-        <a class="d-block small mt-3" href="/login">Login Page</a>
       </div>
     </div>
-  </div>
   </div>
 </div>
 </div>

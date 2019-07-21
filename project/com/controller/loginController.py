@@ -138,6 +138,16 @@ def home():
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
+    logindao = loginDAO()
+    loginvo = loginVO()
+    active_users = logindao.get_active_users()
+    print(active_users)
+    all_user_data = read_json('data/annoted_tweets.json')
+    for user in all_user_data:
+        if user in active_users:
+            all_user_data[user]['active'] = True
+        else:
+            all_user_data[user]['active'] = False
     if request.method == 'POST':
         user = registerVO()
         registerDao = registerDAO()
@@ -172,7 +182,7 @@ def register():
     else:
         file_ptr = open('data/annoted_tweets.json')
         data = json.load(file_ptr)
-        return render_template('register.html', data=data, len=len)
+        return render_template('register.html', data=all_user_data, len=len)
 
 def create_nested_list(data,col=2):
     count=0
