@@ -7,6 +7,7 @@ from project.com.dao.loginDAO import registerDAO
 from project.com.dao import conn_db
 from project.com.controller.tweetController import read_json
 import csv
+import copy
 import json
 
 conn = conn_db()
@@ -222,11 +223,17 @@ def manage_users():
             user=request.form.get('user')
             check=request.form.get('check')
             if check=='add':
-                print(request.form.get('add_no_tweets'))
-                resp = 'success'
+                print(request.form)
+                loginvo.username=request.form.get('user')
+                loginvo.assigned=request.form.get('add_no_tweets')
+                response=logindao.add_tweets(loginvo)
+                resp = response
             elif check=='rem':
-                print(request.form.get('rem_no_tweets'))
-                resp='success'
+                print(request.form)
+                loginvo.username = request.form.get('user')
+                loginvo.remove = request.form.get('rem_no_tweets')
+                response=logindao.remove_tweets(loginvo)
+                resp=response
 
             elif check=='reac':
                 loginvo.username=request.form.get('user')

@@ -2,11 +2,16 @@ from project.com.dao import conn_db
 import json
 import copy
 from project.com.controller.tweetController import read_json
+import datetime,pytz
 
 conn = conn_db()
-cursor=conn.cursor()
+cursor = conn.cursor()
+
+
 def conn_commit(conn):
     conn.commit()
+
+
 def get_single_annots(data=None):
     query = 'SELECT * FROM annoted_tweets'
     cursor.execute(query)
@@ -73,27 +78,27 @@ def get_split_dict(users, total_split):
     return split_dic
 
 
-def get_tweet_ids(data,annotated=None):
+def get_tweet_ids(data, annotated=None):
     ids = []
     for tweet in data:
         ids.append((tweet['id_str'], 0))
-    ids=dict(ids)
-    count_all=0
-    count_1=0
-    count_2=0
-    if type(annotated)==list and len(annotated):
+    ids = dict(ids)
+    count_all = 0
+    count_1 = 0
+    count_2 = 0
+    if type(annotated) == list and len(annotated):
         # temp=[]
         all_user_data = read_json('data/annoted_tweets.json')
-        assigned_list=[]
+        assigned_list = []
         for user in all_user_data:
-            assigned_list+=all_user_data[user]['to_be_annotated']
+            assigned_list += all_user_data[user]['to_be_annotated']
         for tweet_id in assigned_list:
-            count_all+=1
-            ids[tweet_id]+=1
-            if ids[tweet_id]==1:
-                count_1+=1
-            elif ids[tweet_id]==2:
-                count_2+=1
+            count_all += 1
+            ids[tweet_id] += 1
+            if ids[tweet_id] == 1:
+                count_1 += 1
+            elif ids[tweet_id] == 2:
+                count_2 += 1
             else:
                 pass
         # for row in annotated:
@@ -107,7 +112,7 @@ def get_tweet_ids(data,annotated=None):
         #         count_2+=1
         #     else:
         #         pass
-        print('count_1:- {}\tcount_2:- {}\tcount_all:- {}'.format(count_1,count_2,count_all))
+        print('count_1:- {}\tcount_2:- {}\tcount_all:- {}'.format(count_1, count_2, count_all))
 
     return ids
 
@@ -120,15 +125,15 @@ def write_json(data, filename):
     return 'success'
 
 
-def split_data(new_reg=None,user=None):
+def split_data(new_reg=None, user=None):
     if new_reg:
         all_tweets = read_json('data/merge.json')[:7000]
-        static_assigned=user.assigned
-        to_be_assigned=int(user.assigned)
+        static_assigned = user.assigned
+        to_be_assigned = int(user.assigned)
         all_user_data = read_json('data/annoted_tweets.json')
         single_annots = get_single_annots()
-        ids = get_tweet_ids(all_tweets,single_annots)
-        assign_dict=ids
+        ids = get_tweet_ids(all_tweets, single_annots)
+        assign_dict = ids
         user_data = all_user_data[user.username]
         user_data['to_be_annotated'] = []
         for tweet in all_tweets:
@@ -141,7 +146,7 @@ def split_data(new_reg=None,user=None):
                 to_be_assigned -= 1
         user_data['total_assigned'] = len(user_data['to_be_annotated'])
         print('Assigned {} to {}.'.format(user_data['total_assigned'], user.username))
-        if user_data['total_assigned']==static_assigned:
+        if user_data['total_assigned'] == static_assigned:
             print('Successfully assigned new tweets to the user')
         write_json(all_user_data, 'data/annoted_tweets.json')
         return 'success'
@@ -156,7 +161,7 @@ def split_data(new_reg=None,user=None):
             split_users = get_split_dict(active_users, len(all_tweets))
             ids = get_tweet_ids(all_tweets)
             assign_dict = ids
-            print(len(assign_dict))
+            # print(len(assign_dict))
             for user in active_users:
                 user_data = all_user_data[user]
                 user_data['to_be_annotated'] = []
@@ -181,17 +186,17 @@ def split_data(new_reg=None,user=None):
             write_json(all_user_data, 'data/annoted_tweets.json')
 
 
-
 class loginDAO:
     def login_user(self, user):
         # cursor = conn.cursor()
-        query="SELECT * FROM users WHERE username='{}'".format(user.username)
+        query = "SELECT * FROM users WHERE username='{}'".format(user.username)
         cursor.execute(query)
         data = cursor.fetchall()
         # print(data)
         conn.commit()
         # cursor.close()
         # conn.close()
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
         return data
 
     def get_active_users(self):
@@ -200,22 +205,99 @@ class loginDAO:
         cursor.execute(query)
         users = cursor.fetchall()
         users = [user[0] for user in users]
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
         return users
 
-    def reactivate_user(self,user):
+    def reactivate_user(self, user):
         # cursor = conn.cursor()
         query = 'UPDATE users SET active=1 WHERE username="{}"'.format(user.username)
         cursor.execute(query)
         conn.commit()
-        return 'success'
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
+        return "{}'s account successfully reactivated".format(user.username)
 
-    def deactivate_user(self,user):
+    def deactivate_user(self, user):
         # cursor = conn.cursor()
         query = 'UPDATE users SET active=0 WHERE username="{}"'.format(user.username)
-        print(query)
+        # print(query)
         cursor.execute(query)
         conn.commit()
-        return 'success'
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
+        return "{}'s account successfully deactivated".format(user.username)
+
+    def add_tweets(self, user):
+
+        all_tweets = read_json('data/merge.json')[:7000]
+        static_assigned = int(user.assigned)
+        to_be_assigned = int(user.assigned)
+        all_user_data = read_json('data/annoted_tweets.json')
+        single_annots = get_single_annots()
+        ids = get_tweet_ids(all_tweets, single_annots)
+        assign_dict = ids
+        user_data = all_user_data[user.username]
+        if user_data.get('removed_tweets'):
+            print(to_be_assigned,len(user_data['removed_tweets']))
+            remove_count=0
+            for id_str in user_data['removed_tweets'][-1::-1]:
+                if to_be_assigned:
+                    # print(id_str)
+                    user_data['to_be_annotated'].append(id_str)
+                    to_be_assigned-=1
+                    remove_count+=1
+            for x in range(remove_count):
+                print(user_data['removed_tweets'].pop())
+            user_data['total_removed'] = len(user_data['removed_tweets'])
+        previous_assigned = all_user_data[user.username]['total_assigned']
+        # user_data['to_be_annotated'] = []
+        for tweet in all_tweets:
+            id_str = tweet['id_str']
+            assigned_count = assign_dict[id_str]
+            # print(assign_dict)
+            if to_be_assigned > 0 and assigned_count < 2:
+                user_data['to_be_annotated'].append(id_str)
+                assign_dict[id_str] += 1
+                to_be_assigned -= 1
+        user_data['total_assigned'] = len(user_data['to_be_annotated'])
+        print('Assigned {} to {}.'.format(user_data['total_assigned'], user.username))
+        if user_data['total_assigned'] == previous_assigned + static_assigned:
+            print('Successfully added {} tweets to the {}'.format(to_be_assigned,user.username))
+        write_json(all_user_data, 'data/annoted_tweets.json')
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
+        return 'Successfully added {} tweets to the {}'.format(static_assigned,user.username)
+
+    def remove_tweets(self, user):
+        to_be_removed = int(user.remove)
+        all_user_data = read_json('data/annoted_tweets.json')
+        user_data = all_user_data[user.username]
+        static_assigned = int(user_data['total_assigned'])
+        annoted_reported_tweets = user_data['annoted_tweets'] + user_data['reported_tweets']
+        assigned_tweets = user_data['to_be_annotated']
+        can_remove_tweets=copy.deepcopy(assigned_tweets)
+        for tweet in annoted_reported_tweets:
+            if tweet in assigned_tweets:
+                can_remove_tweets.remove(tweet)
+        # print(len(can_remove_tweets))
+        if len(can_remove_tweets)<to_be_removed:
+            return 'User has less tweets left than you have entered'
+        else:
+            if not user_data.get('removed_tweets'):
+                user_data['removed_tweets']=[]
+            else:
+                pass
+            for x in range(to_be_removed):
+                user_data['removed_tweets'].append(can_remove_tweets[x])
+                user_data['to_be_annotated'].remove(can_remove_tweets[x])
+
+
+        user_data['total_assigned'] = len(user_data['to_be_annotated'])
+        user_data['total_removed']=len(user_data['removed_tweets'])
+        print('Removed {} to {}.'.format(to_be_removed, user.username))
+        if user_data['total_assigned'] == static_assigned-to_be_removed:
+            print('Successfully removed {} tweets from the user'.format(to_be_removed))
+        write_json(all_user_data, 'data/annoted_tweets.json')
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
+        return 'Successfully removed {} tweets from the {}'.format(to_be_removed,user.username)
+
 
 class registerDAO:
     def do_necessary_changes(self, user):
@@ -229,42 +311,42 @@ class registerDAO:
         temp['last_updated'] = None
         temp['reported_count'] = 0
         temp['reported_tweets'] = []
-        temp['start_end'] = [0,0]
+        temp['start_end'] = [0, 0]
         temp['to_be_annotated'] = []
         temp['total_assigned'] = 0
         users[user.username] = temp
-        file_ptr = open('data/annoted_tweets.json','w')
-        data_dumped=json.dumps(users,indent=4)
+        file_ptr = open('data/annoted_tweets.json', 'w')
+        data_dumped = json.dumps(users, indent=4)
         file_ptr.write(data_dumped)
         file_ptr.close()
         print('Json file updated')
-        query="alter TABLE annoted_tweets add {} TEXT;".format(user.username)
+        query = "alter TABLE annoted_tweets add {} TEXT;".format(user.username)
         cursor.execute(query)
         # conn.commit()
         # cursor.close()
         print('database Updated')
-        split_data(user=user,new_reg=True)
+        split_data(user=user, new_reg=True)
         conn_commit(conn)
-
-
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
 
     def register_user(self, user):
         # cursor = conn.cursor()
-        query="INSERT INTO users (name,username,password) VALUES ('{}','{}','{}') ".format(user.name,user.username,user.password)
+        query = "INSERT INTO users (name,username,password) VALUES ('{}','{}','{}') ".format(user.name, user.username,
+                                                                                             user.password)
         cursor.execute(query)
         # data = cursor.fetchall()
         # print(data)
         # conn.commit()
         # cursor.close()
         # conn.close()
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
         return True
 
-    def check_exists(self,user):
+    def check_exists(self, user):
         # cursor = conn.cursor()
         cursor.execute("SELECT * FROM users WHERE username='{}'".format(user.username))
         data = cursor.fetchall()
         conn.commit()
         # cursor.close()
-
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
         return data
-

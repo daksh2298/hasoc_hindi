@@ -34,22 +34,26 @@
       var arr = $('#form_' + elem_id).serializeArray();
       console.log('out serialise', arr[0].value);
       var check = false;
+      console.log(arr);
       if (arr[0].value === 'reac') {
         if (arr[2].value === 'REACTIVATE') {
           check = true;
         } else {
           alert('Please type "REACTIVATE" in the text-box!!');
         }
-      }
-      else if (arr[0].value === 'deac') {
+      } else if (arr[0].value === 'deac') {
         if (arr[2].value === 'DEACTIVATE') {
           check = true;
         } else {
           alert('Please type "DEACTIVATE" in the text-box!!');
         }
-      }
-      else{
-        alert('Feature not available right now!');
+      } else if (arr[0].value === 'add') {
+        check = true
+      }else if (arr[0].value === 'rem') {
+        if (confirm('!! You are about to remove tweets !!\nAre you sure you want to continue?')){
+
+          check = true
+        }
       }
       if (check) {
         $.ajax({
@@ -57,17 +61,27 @@
           data: $('#form_' + elem_id).serialize(),
           type: 'POST',
           success: function (response) {
-
-            if (response == 'success' && arr[0].value === 'reac') {
+            console.log(response)
+            if (response.length > 5 && arr[0].value === 'reac') {
               console.log('success');
-              alert('------ User successfully reactivated ------');
+              alert(response);
               location.reload();
-            } else if (response == 'success' && arr[0].value === 'deac') {
+            } else if (response.length > 5 && arr[0].value === 'deac') {
               console.log('success');
-              alert('!!!!! User successfully deactivated !!!!!');
+              alert(response);
+              location.reload();
+            } else if (response.length > 5 && arr[0].value === 'add') {
+              console.log('success');
+              alert(response);
+              location.reload();
+            }else if (response.length > 5 && arr[0].value === 'rem') {
+              console.log('success');
+              alert(response);
               location.reload();
             }
-          },
+
+          }
+          ,
           error: function (error) {
             console.log(error);
             {#alert('Error submitting the tweet! Server Offline');#}
@@ -245,7 +259,8 @@
                                             <div class="form-group">
                                               <div class="form-label-group">
                                                 <button type="button" class="btn btn-outline-primary btn-block"
-                                                        onclick="submit_manage('add_{{ user }}')" id="add_{{ user }}"><i class="fas fa-chevron-circle-up"></i> Add
+                                                        onclick="submit_manage('add_{{ user }}')" id="add_{{ user }}"><i
+                                                        class="fas fa-chevron-circle-up"></i> Add
                                                 </button>
                                               </div>
                                             </div>
@@ -288,7 +303,8 @@
                                             <div class="form-group">
                                               <div class="form-label-group">
                                                 <button type="button" class="btn btn-outline-warning btn-block"
-                                                        onclick="submit_manage('rem_{{ user }}')" id="rem_{{ user }}"><i class="fas fa-chevron-circle-down"></i> Reduce
+                                                        onclick="submit_manage('rem_{{ user }}')" id="rem_{{ user }}"><i
+                                                        class="fas fa-chevron-circle-down"></i> Reduce
                                                 </button>
                                               </div>
                                             </div>
@@ -392,7 +408,9 @@
                                     <div class="card">
                                       <div class="card-header" id="headingOne_{{ user }}">
                                         <h5 class="mb-0">
-                                          <a class="btn btn-link" data-placement="right" data-toggle="tooltip" title="User deactivated! Kindly activate to perform further actions" disabled="true">
+                                          <a class="btn btn-link" data-placement="right" data-toggle="tooltip"
+                                             title="User deactivated! Kindly activate to perform further actions"
+                                             disabled="true">
                                             Add more tweets for <b>{{ user }}</b>
                                           </a>
                                         </h5>
@@ -401,7 +419,9 @@
                                     <div class="card">
                                       <div class="card-header" id="headingTwo_{{ user }}">
                                         <h5 class="mb-0">
-                                          <a class="btn btn-link" data-placement="right" data-toggle="tooltip" title="User deactivated! Kindly activate to perform further actions" disabled="true">
+                                          <a class="btn btn-link" data-placement="right" data-toggle="tooltip"
+                                             title="User deactivated! Kindly activate to perform further actions"
+                                             disabled="true">
                                             Reduce assigned tweets for <b>{{ user }}</b>
                                           </a>
                                         </h5>

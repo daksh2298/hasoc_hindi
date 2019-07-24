@@ -1,5 +1,6 @@
 from project.com.dao import conn_db
 import sqlite3
+import datetime,pytz
 
 conn = conn_db()
 cursor = conn.cursor()
@@ -14,36 +15,42 @@ class tweetDAO:
             rows = cursor.fetchall()
             # print(rows)
             len_rows = len(rows)
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return len_rows, True
         except sqlite3.Error as er:
             # print('\n\n\nCheck_exists', er)
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return er, False
 
     def insert_annot(self, tweet):
         query = 'INSERT INTO annoted_tweets (tweet_id,tweet,{},lang) VALUES ("{}","{}","{}","{}")'.format(tweet.username,
                                                                                                 tweet.tweet_id,
                                                                                                 tweet.tweet, tweet.resp,tweet.lang)
-        print(query)
+        # print(query)
         try:
             # print('inside try')
             cursor.execute(query)
             conn.commit()
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return True
         except sqlite3.Error as er:
             # print('\n\n\n insert_annot', er)
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return er
 
     def update_records(self, tweet):
         query = 'UPDATE annoted_tweets SET {}="{}" WHERE tweet_id="{}"'.format(tweet.username, tweet.resp,
                                                                                tweet.tweet_id)
         try:
-            print(query)
+            # print(query)
             # print('inside try')
             cursor.execute(query)
             conn.commit()
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return True
         except sqlite3.Error as er:
             # print('\n\n\n update_records', er)
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return er
 
     def get_annots(self, tweet):
@@ -53,9 +60,11 @@ class tweetDAO:
             cursor.execute(query)
             rows = cursor.fetchall()
             # print(rows)
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return True, rows
         except sqlite3.Error as er:
             # print('\n\n\n update_records', er)
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return er
 
     def get_annots_admin(self):
@@ -81,9 +90,11 @@ class tweetDAO:
                 query = 'SELECT tweet_id,tweet,{} From annoted_tweets where {} not null'.format(user, user)
                 cursor.execute(query)
                 annotated_tweets[user] = cursor.fetchall()
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return True, annotated_tweets
         except sqlite3.Error as er:
             # print('\n\n\n update_records', er)
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return er
 
     def report_incomplete_tweet(self, tweet):
@@ -94,9 +105,11 @@ class tweetDAO:
             # print('Report Tweet inside try')
             cursor.execute(query)
             conn.commit()
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return True
         except sqlite3.Error as er:
             # print('\n\n\n Report tweet', er)
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return er
 
     def report_not_english(self, tweet):
@@ -107,14 +120,17 @@ class tweetDAO:
             # print('Report Tweet inside try')
             cursor.execute(query)
             conn.commit()
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return True
         except sqlite3.Error as er:
             # print('\n\n\n Report tweet', er)
+            print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
             return er
 
     def get_all_tweets(self):
         query="SELECT * FROM annoted_tweets"
         cursor.execute(query)
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
         return list(cursor.fetchall())
 
     def get_active_users(self):
@@ -123,4 +139,5 @@ class tweetDAO:
         cursor.execute(query)
         users = cursor.fetchall()
         users = [user[0] for user in users]
+        print(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
         return users

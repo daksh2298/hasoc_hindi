@@ -198,6 +198,7 @@ def report_incomplete():
             resp = tweetdao.report_incomplete_tweet(tweetvo)
             user_data = read_json('data/annoted_tweets.json')
             user_data[session['user']]['reported_tweets'].append(id_str)
+            user_data[session['user']]['reported_count']=len(user_data[session['user']]['reported_tweets'])
             new_data = json.dumps(user_data, indent=4)
             json_file = open('data/annoted_tweets.json', 'w')
             json_file.write(new_data)
