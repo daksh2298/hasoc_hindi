@@ -129,5 +129,21 @@ def split_data():
         write_json(all_user_data, 'annoted_tweets.json')
 
 
-reset_json('annoted_tweets.json')
-split_data()
+# reset_json('annoted_tweets.json')
+# split_data()
+
+def validate_json(file):
+    file_ptr = open(file)
+    data = json.loads(file_ptr.read())
+    print(data)
+    file_ptr.close()
+    for user in data:
+        data[user]['annoted_tweets']=list(set(data[user]['annoted_tweets']))
+        data[user]['annoted_count']=len(data[user]['annoted_tweets'])
+        data[user]['reported_tweets']=list(set(data[user]['reported_tweets']))
+        data[user]['reported_count']=len(data[user]['reported_tweets'])
+    file_ptr = open(file,'w')
+    data = file_ptr.write(json.dumps(data,indent=2))
+    file_ptr.close()
+
+validate_json('annoted_tweets.json')
