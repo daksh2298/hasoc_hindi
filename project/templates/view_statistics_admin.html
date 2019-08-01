@@ -149,7 +149,7 @@
                           {{ data[username]['annoted_count'] }}
                         </td>
                         <td>
-                          {{ len(data[username]['annoted_tweets']) }}
+                          {{ data[username]['total_assigned']-len(data[username]['annoted_tweets']) }}
                         </td>
                       </tr>
                     {% endif %}
