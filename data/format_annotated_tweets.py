@@ -129,7 +129,7 @@ def split_data():
         write_json(all_user_data, 'annoted_tweets.json')
 
 
-# reset_json('annoted_tweets.json')
+reset_json('annoted_tweets.json')
 # split_data()
 
 def validate_json(file):
@@ -146,4 +146,4 @@ def validate_json(file):
     data = file_ptr.write(json.dumps(data,indent=2))
     file_ptr.close()
 
-validate_json('annoted_tweets.json')
+# validate_json('annoted_tweets.json')
