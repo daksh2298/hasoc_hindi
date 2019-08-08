@@ -86,34 +86,34 @@ def get_tweet_ids(data, annotated=None):
     count_all = 0
     count_1 = 0
     count_2 = 0
-    if type(annotated) == list and len(annotated):
+    # if type(annotated) == list or len(annotated):
         # temp=[]
-        all_user_data = read_json('data/annoted_tweets.json')
-        assigned_list = []
-        for user in all_user_data:
-            assigned_list += all_user_data[user]['to_be_annotated']
-        for tweet_id in assigned_list:
-            count_all += 1
-            ids[tweet_id] += 1
-            if ids[tweet_id] == 1:
-                count_1 += 1
-            elif ids[tweet_id] == 2:
-                count_2 += 1
-            else:
-                pass
-        # for row in annotated:
-        #     count_all+=1
-        #     temp=[col for col in row if col]
-        #     if len(temp)==5:
-        #         ids[temp[1]]=1
-        #         count_1+=1
-        #     elif len(temp)==6:
-        #         ids[temp[1]] = 2
-        #         count_2+=1
-        #     else:
-        #         pass
-        print('count_1:- {}\tcount_2:- {}\tcount_all:- {}'.format(count_1, count_2, count_all))
-
+    all_user_data = read_json('data/annoted_tweets.json')
+    assigned_list = []
+    for user in all_user_data:
+        assigned_list += all_user_data[user]['to_be_annotated']
+    print(assigned_list)
+    for tweet_id in assigned_list:
+        count_all += 1
+        ids[tweet_id] += 1
+        if ids[tweet_id] == 1:
+            count_1 += 1
+        elif ids[tweet_id] == 2:
+            count_2 += 1
+        else:
+            pass
+    # for row in annotated:
+    #     count_all+=1
+    #     temp=[col for col in row if col]
+    #     if len(temp)==5:
+    #         ids[temp[1]]=1
+    #         count_1+=1
+    #     elif len(temp)==6:
+    #         ids[temp[1]] = 2
+    #         count_2+=1
+    #     else:
+    #         pass
+    print('count_1:- {}\tcount_2:- {}\tcount_all:- {}'.format(count_1, count_2, count_all))
     return ids
 
 
@@ -228,15 +228,17 @@ class loginDAO:
     def add_tweets(self, user):
 
         all_tweets = read_json('data/merge.json')[:7000]
+        print('enter add_tweets to assign {} tweets to {}'.format(user.assigned,user.username))
         static_assigned = int(user.assigned)
         to_be_assigned = int(user.assigned)
         all_user_data = read_json('data/annoted_tweets.json')
         single_annots = get_single_annots()
-        ids = get_tweet_ids(all_tweets, single_annots)
+        ids = get_tweet_ids(all_tweets, all_user_data)
         assign_dict = ids
+        # print(assign_dict)
         user_data = all_user_data[user.username]
         if user_data.get('removed_tweets'):
-            print(to_be_assigned,len(user_data['removed_tweets']))
+            # print(to_be_assigned,len(user_data['removed_tweets']))
             remove_count=0
             for id_str in user_data['removed_tweets'][-1::-1]:
                 if to_be_assigned:
@@ -252,8 +254,10 @@ class loginDAO:
         for tweet in all_tweets:
             id_str = tweet['id_str']
             assigned_count = assign_dict[id_str]
+            # print(id_str,assigned_count,assign_dict)
             # print(assign_dict)
             if to_be_assigned > 0 and assigned_count < 2:
+                print(id_str,assign_dict[id_str])
                 user_data['to_be_annotated'].append(id_str)
                 assign_dict[id_str] += 1
                 to_be_assigned -= 1
